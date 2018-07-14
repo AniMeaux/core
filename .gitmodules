@@ -1,5 +1,5 @@
 [submodule "back"]
 	url = https://github.com/AniMeaux/backend.git
 [submodule "website"]
-	path = website
+	path = front
 	url = https://github.com/AniMeaux/website.git
