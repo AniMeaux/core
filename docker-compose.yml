@@ -10,10 +10,12 @@ services:
 
   frontend:
     build: front
+    command: npm run dev
     environment:
       - NODE_ENV=development
     ports:
       - 8080:8080
     volumes:
       - ./front:/front
+      - /front/node_modules
     
