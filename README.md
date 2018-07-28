@@ -2,7 +2,9 @@
 
 [![js-airbnb-style](https://img.shields.io/badge/code_style-airbnb-brightgreen.svg?style=flat-square)](https://github.com/airbnb/javascript)
 
-<img src="./front/src/assets/img/logo-simple@1x.png" width="320" alt="Logo Ani'Meaux"/>
+<a href="https://www.animeaux.org/?utm_source=github&utm_medium=logo" title="Ani'Meaux">
+  <img src="logo-simple.png" width="320" alt="Logo Ani'Meaux"/>
+</a>
 
 > An animal protection non-profit organization website based in Meaux (near Paris) in France. This repo contains the official website source code (with both frontend & backend).
 
