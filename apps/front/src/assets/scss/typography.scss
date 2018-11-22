@@ -1,0 +1,246 @@
+/* Basic styles */
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,500,300italic,500italic,700italic,900,300);
+
+html {
+  font-size: 62.5%; // For rem units support
+}
+
+// Variables
+// ----------------------------
+
+//## Alpha values for grey text, icons, and dividers
+$gray-darker:            #212121; // #212121 - text
+$gray-dark:              #757575; // #757575 - secondary text, icons
+$gray:                   #bdbdbd; // #bdbdbd - hint text
+$gray-light:             #e0e0e0; // #e0e0e0 - divider
+$gray-lighter:           #f5f5f5; // #f5f5f5 - background
+
+//** Typographic Scale
+$font-size-display-4:       112;
+$font-size-display-3:       56;
+$font-size-display-2:       45;
+$font-size-display-1:       34;
+$font-size-headline:        24;
+$font-size-title:           20;
+$font-size-subhead-2:       15;
+$font-size-subhead-1:       15;
+$font-size-body-2:          14;
+$font-size-body-1:          14;
+$font-size-caption:         12;
+$font-size-label:           12;
+$font-size-menu:            13;
+$font-size-button:          14;
+
+//** Typographic Scale for devices (max-width: 960px)
+$font-size-dv-subhead:      16;
+$font-size-dv-body:         14;
+$font-size-dv-menu:         14;
+
+//** Basic Styles
+$font-weight-display-4:     100;
+$font-weight-display-3:     300;
+$font-weight-display-2:     300;
+$font-weight-display-1:     300;
+$font-weight-headline:      300;
+$font-weight-title:         400;
+$font-weight-subhead-2:     400;
+$font-weight-subhead-1:     300;
+$font-weight-body-2:        400;
+$font-weight-body-1:        300;
+$font-weight-caption:       300;
+$font-weight-label:         300;
+$font-weight-menu:          400;
+$font-weight-button:        400;
+
+//** Line Height
+$line-height-display-4:     128;
+$line-height-display-3:     84;
+$line-height-display-2:     48;
+$line-height-display-1:     40;
+$line-height-headline:      32;
+$line-height-title:         28;
+$line-height-subhead-2:     28;
+$line-height-subhead-1:     24;
+$line-height-body-2:        24;
+$line-height-body-1:        20;
+$line-height-caption:       20;
+$line-height-label:         20;
+$line-height-menu:          20;
+$line-height-button:        20;
+
+//** Tracking and kerning
+$letter-spacing-display-4: -0.1;
+$letter-spacing-display-3: -0.05;
+$letter-spacing-display-2: 0;
+$letter-spacing-display-1: 0;
+$letter-spacing-headline:  0;
+$letter-spacing-title:     0.05;
+$letter-spacing-subhead-2: 0.1;
+$letter-spacing-subhead-1: 0.1;
+$letter-spacing-body-2:    0.1;
+$letter-spacing-body-1:    0.1;
+$letter-spacing-caption:   0.2;
+$letter-spacing-label:     0.1;
+$letter-spacing-menu:      0.1;
+$letter-spacing-button:    0.1;
+
+//** Basic colors/Color contrast
+$font-color-display-4:      $gray-dark;
+$font-color-display-3:      $gray-dark;
+$font-color-display-2:      $gray-dark;
+$font-color-display-1:      $gray-dark;
+$font-color-headline:       $gray-darker;
+$font-color-title:          $gray-darker;
+$font-color-subhead-2:      $gray-darker;
+$font-color-subhead-1:      $gray-darker;
+$font-color-body-2:         $gray-darker;
+$font-color-body-1:         $gray-darker;
+$font-color-caption:        $gray-dark;
+$font-color-label:          $gray-darker;
+$font-color-menu:           $gray-darker;
+$font-color-button:         $gray-darker;
+
+
+
+// Mixins
+@mixin font-size($fontSize: 14) {
+  font-size: $fontSize+0px; 
+  font-size: ($fontSize/10)+0rem;
+}
+
+@mixin line-height($leadingSize: 14) {
+  line-height: $leadingSize+0px; 
+  line-height: ($leadingSize/10)+0rem;
+}
+
+@mixin letter-spacing($kerningSize: 0) {
+  letter-spacing: $kerningSize+0px; 
+  letter-spacing: ($kerningSize/10)+0rem;
+}
+
+@mixin font($fontSize, $leadingSize, $kerningSize) {
+  font-size: $fontSize+0px; 
+  font-size: ($fontSize/10)+0rem;
+  line-height: $leadingSize+0px; 
+  line-height: ($leadingSize/10)+0rem;
+  letter-spacing: $kerningSize+0px; 
+  letter-spacing: ($kerningSize/10)+0rem;
+}
+
+// Typography
+
+// Typographic Scale & Basic Styles
+// -------------------------
+.display-4 {
+  @include font($font-size-display-4, $line-height-display-4, $letter-spacing-display-4);
+  font-weight: $font-weight-display-4;
+  color: $font-color-display-4;
+  text-transform: inherit;
+}
+.display-3 {
+  @include font($font-size-display-3, $line-height-display-3, $letter-spacing-display-3);
+  font-weight: $font-weight-display-3;
+  color: $font-color-display-3;
+  text-transform: inherit;
+}
+.display-2 {
+  @include font($font-size-display-2, $line-height-display-2, $letter-spacing-display-2);
+  font-weight: $font-weight-display-2;
+  color: $font-color-display-2;
+  text-transform: inherit;
+}
+.display-1 {
+  @include font($font-size-display-1, $line-height-display-1, $letter-spacing-display-1);
+  font-weight: $font-weight-display-1;
+  color: $font-color-display-1;
+  text-transform: inherit;
+}
+.headline {
+  @include font($font-size-headline, $line-height-headline, $letter-spacing-headline);
+  font-weight: $font-weight-headline;
+  color: $font-color-headline;
+  text-transform: inherit;
+}
+.title {
+  @include font($font-size-title, $line-height-title, $letter-spacing-title);
+  font-weight: $font-weight-title;
+  color: $font-color-title;
+  text-transform: inherit;
+}
+.subhead-2 {
+  @include font($font-size-subhead-2, $line-height-subhead-2, $letter-spacing-subhead-2);
+  font-weight: $font-weight-subhead-2;
+  color: $font-color-subhead-2;
+  text-transform: inherit;
+}
+.subhead-1 {
+  @include font($font-size-subhead-1, $line-height-subhead-1, $letter-spacing-subhead-1);
+  font-weight: $font-weight-subhead-1;
+  color: $font-color-subhead-1;
+  text-transform: inherit;
+}
+.body-2 {
+  @include font($font-size-body-2, $line-height-body-2, $letter-spacing-body-2);
+  font-weight: $font-weight-body-2;
+  color: $font-color-body-2;
+  text-transform: inherit;
+}
+.body-1 {
+  @include font($font-size-body-1, $line-height-body-1, $letter-spacing-body-1);
+  font-weight: $font-weight-body-1;
+  color: $font-color-body-1;
+  text-transform: inherit;
+}
+.caption {
+  @include font($font-size-caption, $line-height-caption, $letter-spacing-caption);
+  font-weight: $font-weight-caption;
+  color: $font-color-caption;
+  text-transform: inherit;
+}
+.label {
+  @include font($font-size-label, $line-height-label, $letter-spacing-label);
+  font-weight: $font-weight-label;
+  color: $font-color-label;
+  text-transform: inherit;
+}
+.menu {
+  @include font($font-size-menu, $line-height-menu, $letter-spacing-menu);
+  font-weight: $font-weight-menu;
+  color: $font-color-menu;
+  text-transform: inherit;
+}
+.button {
+  @include font($font-size-button, $line-height-button, $letter-spacing-button);
+  font-weight: $font-weight-button;
+  color: $font-color-button;
+  text-transform: uppercase;
+}
+
+// Font-size for device
+@media only screen and (max-width: 960px) {
+  .subhead-2 {
+    @include font-size($font-size-dv-subhead);
+  }
+  .subhead-1 {
+    @include font-size($font-size-dv-subhead);
+  }
+  .body-2 {
+    @include font-size($font-size-dv-body);
+  }
+  .body-1 {
+    @include font-size($font-size-dv-body);
+  }
+  .menu {
+    @include font-size($font-size-dv-menu);
+  }
+}
+
+.display-4, .display-3, .display-2, .display-1  {
+  margin: 0 0 $line-height-title/2+0px 0;
+  margin-bottom: $line-height-title/20+0rem;
+}
+
+.headline, .title, .subhead-2, .subhead-1, .body-2, .body-1, .caption, .label, .menu, .button {
+  margin: 0 0 $line-height-body-1/2+0px 0;
+  margin-bottom: $line-height-body-1/20+0rem;
+}

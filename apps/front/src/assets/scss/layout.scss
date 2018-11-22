@@ -1,0 +1,34 @@
+.wrap{
+  width: 1280px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width : 1280px) {
+  .wrap{
+    width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 980px) and (max-width : 1024px) {
+  .wrap{
+    width: 980px;
+  }
+}
+
+@media only screen and (min-width: 783px) and (max-width : 980px) {
+  .wrap{
+    width: 870px;
+  }
+}
+
+@media only screen and (min-width: 495px) and (max-width : 783px) {
+  .wrap{
+    width: 480px;
+  }
+}
+
+@media only screen and (max-width: 495px){
+  .wrap{
+    width: 100%;
+  }
+}

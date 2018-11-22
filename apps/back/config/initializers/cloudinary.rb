@@ -1,0 +1,1 @@
+CLOUDINARY_CONFIG = YAML.load_file("#{::Rails.root}/config/cloudinary.yml")[::Rails.env]

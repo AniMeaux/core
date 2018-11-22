@@ -1,0 +1,46 @@
+{
+  "name": "mycuistot",
+  "scripts": {
+    "postdeploy": "rake db:migrate"
+  },
+  "env": {
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true,
+      "value": "disabled"
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "value": "preprod"
+    },
+    "RACK_ENV": {
+      "value": "preprod"
+    },
+    "NODE_ENV": {
+      "value": "preprod"
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "newrelic",
+    "heroku-postgresql",
+    "scheduler",
+    "sendgrid"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}

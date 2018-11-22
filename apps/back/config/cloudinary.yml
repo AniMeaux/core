@@ -1,0 +1,18 @@
+development:
+  cloud_name: hryjanpur
+  api_key: '274499615614436'
+  api_secret: teYPnrRErJiCvkKLE1jFkaGBDeE
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hryjanpur
+  api_key: '274499615614436'
+  api_secret: teYPnrRErJiCvkKLE1jFkaGBDeE
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hryjanpur
+  api_key: '274499615614436'
+  api_secret: teYPnrRErJiCvkKLE1jFkaGBDeE
+  enhance_image_tag: true
+  static_image_support: false

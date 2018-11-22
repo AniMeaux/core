@@ -1,0 +1,38 @@
+.input{
+  border: none;
+  min-height: 45px;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 0 16px;
+
+  border: 1px solid lightgrey;
+
+  transition: border-bottom 200ms;
+
+  &.is-invalid{
+    border-bottom: 3px solid $red;
+  }
+
+  &.is-valid{
+    border-bottom: 3px solid $green;
+  }
+
+  &-error{
+    color: $red;
+    margin-top: 8px;
+
+    &-transition{
+      transition: opacity 1s transform 1s;
+
+      &-enter, &-leave-to{
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      &-enter-to, &-leave{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+static/*.js
+libs/*
+karma.conf.js
+tests/*
