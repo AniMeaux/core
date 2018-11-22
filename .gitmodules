@@ -1,4 +1,0 @@
-[submodule "back"]
-	url = https://github.com/AniMeaux/backend.git
-[submodule "front"]
-	url = https://github.com/AniMeaux/frontend.git
