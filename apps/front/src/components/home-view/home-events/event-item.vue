@@ -1,5 +1,5 @@
 <template>
-  <a href="https://www.facebook.com/events/228573844622300/" class="event-item">
+  <component :is="url ? 'a' : 'nuxt-link'" :href="url" :to="`/events/${id}`" class="event-item">
     <h3 class="subhead-1 event-item-title">
       {{ name }}
     </h3>
@@ -9,7 +9,7 @@
     <p class="body-1 event-item-description">
       {{ description }}
     </p>
-  </a>
+  </component>
 </template>
 
 <script>
@@ -27,6 +27,9 @@
       description: {
         type: String,
       },
+      url: {
+        type: String,
+      },
       begin: {
       },
       end: {
@@ -34,10 +37,10 @@
     },
     computed: {
       getBegin() {
-        return moment(this.begin).format('DD MMMM');
+        return moment(this.begin).format('DD MMMM [à] HH:mm');
       },
       getEnd() {
-        return moment(this.end).format('DD MMMM');
+        return moment(this.end).format('DD MMMM [à] HH:mm');
       },
     },
   };

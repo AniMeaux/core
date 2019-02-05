@@ -1,6 +1,6 @@
 module.exports = {
   API: {
-    BASE_URL: 'http://localhost:3000',
+    BASE_URL: 'http://backend:3000',
   },
   GOOGLE: {
     ANALYTICS: {

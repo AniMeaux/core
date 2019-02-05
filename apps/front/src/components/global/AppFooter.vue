@@ -35,8 +35,8 @@
             </a>
           </div>
         </div>
-        <div class="app-footer-logo">
-          <nuxt-link to="/">
+        <div class="app-footer-logo" style="display: flex;">
+          <nuxt-link to="/" style="margin: auto 0; margin-left:32px;">
             <img
               title="Ani'Meaux logo"
               src="~/assets/img/logo-simple.svg"

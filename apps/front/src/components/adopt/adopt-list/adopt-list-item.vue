@@ -4,7 +4,7 @@
       v-if="getImage"
       class="item-image"
       :public-id="getImage.public_id"
-      :transformations="{ c: 'fill', w: 280, h: 280 }"
+      :transformations="{ c: 'fill', w: 280, h: 280, fl: 'progressive', q: '10', f: 'auto' }"
       :sources="[
         {
           media: '(min-width: 650px)',
@@ -21,8 +21,8 @@
       <div class="subhead-2 item-description-name">
         {{ data.name }}
       </div>
-      <div class="body-2 item-description-age">
-        {{ data.age }} ans
+      <div v-if="age" class="body-2 item-description-age">
+        {{ age }}
       </div>
     </div>
   </nuxt-link>
@@ -30,6 +30,7 @@
 
 <script>
   import Cloudinary from '~/components/global/cloudinary';
+  import moment from 'moment';
 
   export default {
     name: 'adopt-list-item',
@@ -45,6 +46,9 @@
     computed: {
       getImage() {
         return this.data.images.length > 0 ? this.data.images[0] : null;
+      },
+      age() {
+        return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null;
       },
     },
     components: {

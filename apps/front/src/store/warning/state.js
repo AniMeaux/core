@@ -1,3 +1,3 @@
 export default {
-  visible: true,
+  visible: false,
 };

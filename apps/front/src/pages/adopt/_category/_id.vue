@@ -105,7 +105,7 @@
     },
     data() {
       return {
-        data: null,
+        data: {},
         adoptVisible: false,
       };
     },
@@ -153,7 +153,7 @@
     
     &-layout{
       display: grid;
-      grid-template-columns: 30% 80%;
+      grid-template-columns: 30% 1fr;
       grid-gap: 16px;
       
       margin-top: 32px;

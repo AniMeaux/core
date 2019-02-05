@@ -1,5 +1,5 @@
 <template>
-  <transition name="modal" mode="out-in">
+  <transition v-if="data" name="modal" mode="out-in">
     <div class="adopt-modal" v-if="visible">
       <div class="adopt-modal-content">
         <h2 class="subhead-2">
@@ -25,6 +25,7 @@
     props: {
       data: {
         type: Object,
+        required: true,
       },
       visible: {
         type: Boolean,

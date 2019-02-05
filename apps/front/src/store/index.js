@@ -5,8 +5,10 @@ import animals from './animals';
 
 const createStore = () => {
   return new Vuex.Store({
-    ...warning,
-    ...animals,
+    modules: {
+      warning,
+      animals,
+    },
   });
 };
 
