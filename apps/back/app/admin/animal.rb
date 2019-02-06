@@ -1,5 +1,5 @@
 ActiveAdmin.register Animal do
-  permit_params :name, :description, :category, :age, :gender, :species, :status,
+  permit_params :name, :description, :category, :birthday, :gender, :species, :status,
     images_attributes: [:id, :picture, :public_id, :_destroy]
 
   index do
@@ -7,7 +7,7 @@ ActiveAdmin.register Animal do
     id_column
     column :category
     column :name
-    column :age
+    column :birthday
     column :gender
     column :species
     column :status
@@ -15,7 +15,6 @@ ActiveAdmin.register Animal do
   end
 
   filter :category
-  filter :age
   filter :status
   filter :gender
 
@@ -24,7 +23,7 @@ ActiveAdmin.register Animal do
       f.input :category
       f.input :name
       f.input :description, as: :text
-      f.input :age
+      f.input :birthday, :as => :date_picker
       f.input :gender
       f.input :species
       f.input :status

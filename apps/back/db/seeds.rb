@@ -6,7 +6,7 @@ if !Rails.env.production?
       name: Faker::Cat.name,
       description: Faker::Lorem.paragraph(2),
       species: Faker::Cat.breed,
-      age: Faker::Number.between(1, 10),
+      birthday: Faker::Date.between(Date.today - 5.months, Date.today - 1.week),
       gender: Faker::Number.between(0, 1),
       category: Faker::Number.between(0, 4),
       status: Faker::Number.between(0, 1)

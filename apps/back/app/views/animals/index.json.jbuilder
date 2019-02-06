@@ -1,5 +1,5 @@
 json.array! @animals do |animal|
-  json.extract! animal, :id, :name, :age, :category, :status
+  json.extract! animal, :id, :name, :birthday, :category, :status
   json.images do
     json.array! animal.images do |image|
       json.extract! image, :id

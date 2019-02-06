@@ -1,0 +1,6 @@
+development:
+  api_key: 'SENDGRID_API_KEY'
+production:
+  api_key: <%= ENV['SENDGRID_API_KEY'] %>
+test:
+  api_key: <%= ENV['SENDGRID_API_KEY'] %>

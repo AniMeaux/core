@@ -3,6 +3,7 @@ services:
   db:
     image: postgres
     environment:
+      - POSTGRES_DATABASE=animeaux_development
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
     ports:

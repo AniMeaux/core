@@ -1,3 +1,35 @@
+def post_sendgrid(email) 
+  require 'net/http'
+  require 'json'
+
+  begin
+    baseUrl = 'https://api.sendgrid.com/v3'
+    endpoint = "#{baseUrl}/contactdb/recipients"
+
+    uri = URI.parse(endpoint)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+    req = Net::HTTP::Post.new(uri.path, {
+      'Content-Type' =>'application/json',  
+      'Authorization' => "Bearer #{SENDGRID_CONFIG['api_key']}"
+    })
+
+    req.body = [
+      {
+        "email": email
+      }
+    ].to_json
+
+    res = http.request(req)
+    return JSON.parse(res.body)
+  rescue => e
+    puts "failed #{e}"
+    throw e
+  end
+end
+
 class NewslettersController < ApplicationController
   before_action :set_newsletter, only: [:show, :update, :destroy]
 
@@ -22,10 +54,16 @@ class NewslettersController < ApplicationController
   # POST /newsletters.json
   def create
     @newsletter = Newsletter.new(newsletter_params)
-
+    
     respond_to do |format|
       if @newsletter.save
-        format.json { render template: 'newsletters/show', status: :created }
+        begin
+          response = post_sendgrid(newsletter_params[:email])
+          format.json { render json: response, status: :created }
+        rescue => e
+          puts "Error occured #{e}"
+          format.json { render template: 'newsletters/show', status: :unprocessable_entity }
+        end
       else
         format.json { render template: 'newsletters/show', json: @newsletter.errors, status: :unprocessable_entity }
       end

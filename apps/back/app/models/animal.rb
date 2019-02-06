@@ -8,7 +8,7 @@ class Animal < ApplicationRecord
   validates :name, length: { minimum: 2 }
   validates :species, length: { minimum: 2 }
   validates :description, length: { maximum: 1200 }
-  validates :age, numericality: { only_integer: true }
+  validates :birthday, presence: true
 
   enum category: [
     :cat,
