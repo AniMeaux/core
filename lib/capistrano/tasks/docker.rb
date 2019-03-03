@@ -27,7 +27,7 @@ namespace :docker do
     on roles(:all) do
       within release_path do
         execute 'docker-compose', "-f #{fetch :docker_file}", :down
-        # execute 'docker', :stop, '$(docker ps -q)'
+        execute 'docker', :stop, '$(docker ps -aq)'
       end
     end
   end
