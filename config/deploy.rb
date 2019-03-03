@@ -5,7 +5,7 @@ set :application, "animeaux"
 set :repo_url, "git@github.com:AniMeaux/core.git"
 
 # Default branch is :master
-set :branch, "dev"
+set :branch, "feature/blog-pages"
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"

@@ -11,7 +11,7 @@ services:
     volumes:
       - ./apps/back/tmp/db:/var/lib/postgresql/data
 
-  backend:
+  back:
     build: apps/back
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     environment:
@@ -24,7 +24,7 @@ services:
     depends_on:
       - db
 
-  frontend:
+  front:
     build: apps/front
     command: npm run dev
     environment:
