@@ -107,6 +107,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .legal{
     padding-top: 32px;
 

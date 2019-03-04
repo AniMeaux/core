@@ -1,18 +1,14 @@
-FROM node:8.5.0
+FROM node:10
 
-# Create app directory
-RUN mkdir -p /front
+WORKDIR /app
 
-WORKDIR ./front
-COPY package*.json ./
+COPY package.json .
+COPY package-lock.json .
 
-# Install dependencies
-RUN npm install
-RUN npm rebuild node-sass
+RUN npm ci
 
 COPY . .
 
-# Rebuild Sass
 EXPOSE 8080
 
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "start" ]

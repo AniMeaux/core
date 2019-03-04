@@ -41,6 +41,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt-modal{
     position: fixed;
     display: flex;

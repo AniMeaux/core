@@ -68,6 +68,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt{
     background-color: #F7F7F7;
     

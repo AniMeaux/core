@@ -75,6 +75,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .newsletter-form{
     &-container{
       width: 40%;

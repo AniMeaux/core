@@ -72,6 +72,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .contact-form{
     fieldset{
       border: 1px solid $divider;
