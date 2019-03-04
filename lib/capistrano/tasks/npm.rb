@@ -3,7 +3,7 @@ namespace :npm do
   task :install do
     on roles(:front) do
       within release_path do
-        execute 'docker-compose', "-f #{fetch :docker_file}", :run, 'front', 'npm install'
+        execute 'docker-compose', "-f #{fetch :docker_file}", :run, 'front', 'npm ci'
       end
     end
   end
