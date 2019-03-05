@@ -1,6 +1,6 @@
 class Animal < ApplicationRecord
-  has_many :images, through: :animal_images, dependent: :destroy
   has_many :animal_images, dependent: :destroy
+  has_many :images, through: :animal_images, dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :animal_images, allow_destroy: true
