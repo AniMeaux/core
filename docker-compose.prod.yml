@@ -14,6 +14,8 @@ services:
     build: apps/back
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     environment:
+      - RAILS_ENV=production
+      - RACK_ENV=production
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
     volumes:
