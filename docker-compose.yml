@@ -33,4 +33,5 @@ services:
       - 8080:8080
     volumes:
       - ./apps/front:/app
+      - ./apps/front/node_modules
     

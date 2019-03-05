@@ -26,10 +26,9 @@ services:
   front:
     build: apps/front
     command: bash -c "NODE_ENV=production npm start"
-    environment:
-      - NPM_CONFIG_PRODUCTION=true
     ports:
       - 8080:8080
     volumes:
       - ./apps/front:/app
+      - ./apps/front/node_modules
     
