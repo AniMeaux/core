@@ -27,7 +27,8 @@ set :branch, "feature/blog-pages"
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
 set :linked_files, [
-  '.env'
+  '.env',
+  'apps/back/config/secrets.yml'
 ]
 
 # Default value for default_env is {}
