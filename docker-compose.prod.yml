@@ -20,6 +20,7 @@ services:
       - POSTGRES_PASSWORD=password
     volumes:
       - ./apps/back:/back
+      - ./apps/back/config/secrets.yml:/back/config/secrets.yml
     ports:
       - 3000:3000
     depends_on:
