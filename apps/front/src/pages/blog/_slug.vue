@@ -75,7 +75,7 @@
             hid: 'og:type', name: 'og:type', content: 'article',
           },
           {
-            hid: 'og:url', name: 'og:url', content: this.$route.path,
+            hid: 'og:url', name: 'og:url', content: `https://www.animeaux.org${this.$route.path}`,
           },
           {
             hid: 'og:description', name: 'og:description', content: this.post.excerpt,
