@@ -13,7 +13,9 @@
         >
           <div
             class="blog-post-image"
-            
+            :style="{
+              backgroundImage: `url(${post.feature_image})`
+            }"
           />
           <div class="title blog-post-title">
             {{ post.title }}
@@ -24,10 +26,6 @@
         </nuxt-link>
       </div>
     </div>
-    blog view
-    <pre>
-      {{ posts }}
-    </pre>
   </div>
 </template>
 
@@ -50,6 +48,22 @@
         posts: response ? response.posts : [],
       };
     },
+    head() {
+      return {
+        title: 'Blog',
+        meta: [
+          {
+            hid: 'description', name: 'description', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !',
+          },
+          {
+            hid: 'og:description', name: 'og:description', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !',
+          },
+          {
+            hid: 'og:twitter', name: 'og:twitter', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !',
+          },
+        ],
+      };
+    },
   };
 </script>
 
@@ -57,10 +71,35 @@
   @import "@/assets/scss/variables/_colors.scss";
 
   .blog{
+    @media only screen and (max-width: 495px) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    .title-underline{
+      color: $red;
+      &::after{
+        background-color: $red;
+      }
+    }
+    
     &__posts{
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 16px;
+      padding-bottom: 32px;
+
+      @media only screen and (max-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media only screen and (max-width: 495px) {
+        grid-template-columns: 1fr;
+      }
 
       .blog-post{
         display: flex;
@@ -71,6 +110,8 @@
           height: 180px;
           background-color: rgba(black, 0.12);
           border-radius: 6px;
+          background-size: cover;
+          background-position: center;
         }
 
         &-title{

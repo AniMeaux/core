@@ -71,6 +71,12 @@
             title: 'Nos animaux adoptés',
             color: 'green',
           },
+          {
+            to: '/blog',
+            name: 'Blog',
+            title: 'Notre blog',
+            color: 'red',
+          },
           // {
           //   to: '/events',
           //   name: 'Agenda',
@@ -119,7 +125,7 @@
       width: 45px;
       text-align: center;
 
-      @media only screen and (max-width: 495px) {
+      @media only screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -137,7 +143,7 @@
       img{
         margin: auto 0;
 
-        @media only screen and (max-width: 495px) {
+        @media only screen and (max-width: 720px) {
           display: none;
 
           &.mobile{
@@ -161,7 +167,7 @@
         margin: 0;
         box-shadow: 0 3px 3px rgba(black, 0.12);
 
-        @media only screen and (max-width: 495px) {
+        @media only screen and (max-width: 720px) {
           display: flex;
         }
 
@@ -181,7 +187,7 @@
         }
       }
 
-      @media only screen and (max-width: 495px) {
+      @media only screen and (max-width: 720px) {
         display: none;
       }
 
@@ -201,6 +207,7 @@
         height: $header-height;
         text-align: center;
         text-decoration: none;
+        text-transform: uppercase;
         vertical-align: middle;
 
         padding: 0 16px;
@@ -257,7 +264,7 @@
       }
     }
 
-    @media only screen and (max-width: 495px) {
+    @media only screen and (max-width: 720px) {
       padding: 0 16px;
     }
   }
