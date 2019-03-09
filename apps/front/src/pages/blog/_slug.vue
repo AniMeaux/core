@@ -94,6 +94,12 @@
   @import "@/assets/scss/variables/_colors.scss";
 
   .blog{
+    .wrap{
+      @media only screen and (max-width: 495px) {
+        padding: 0 16px;
+      }
+    }
+    
     &__featured-image{
       width: 100%;
       height: 400px;
@@ -153,6 +159,10 @@
           display: grid;
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 16px;
+
+          @media only screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+          }
 
           img{
             object-fit: cover;

@@ -1,5 +1,10 @@
 <template>
-  <div class="app-header">
+  <div
+    class="app-header"
+    :class="{
+      scrolled
+    }"
+  >
     <div class="wrap">
       <a @click.prevent="mobile = !mobile" class="app-header-menu">
         <transition name="fade" mode="out-in">
@@ -91,7 +96,20 @@
           },
         ],
         mobile: false,
+        scrolled: false,
       };
+    },
+    mounted() {
+      window.addEventListener('scroll', this.updateScroll);
+    },
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.updateScroll);
+    },
+    methods: {
+      updateScroll() {
+        const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        this.scrolled = scrollPosition > 50;
+      },
     },
   };
 </script>
@@ -111,8 +129,11 @@
     z-index: 10;
 
     height: $header-height;
-
     background-color: white;
+
+    &.scrolled{
+      box-shadow: 0 3px 12px rgba(black, 0.08);
+    }
 
     .wrap{
       display: flex;
