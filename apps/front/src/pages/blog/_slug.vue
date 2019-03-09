@@ -72,6 +72,12 @@
             hid: 'description', name: 'description', content: this.post.excerpt,
           },
           {
+            hid: 'og:type', name: 'og:type', content: 'article',
+          },
+          {
+            hid: 'og:url', name: 'og:url', content: this.$route.path,
+          },
+          {
             hid: 'og:description', name: 'og:description', content: this.post.excerpt,
           },
           {
