@@ -50,6 +50,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .contact{
     background-color: #F7F7F7;
 

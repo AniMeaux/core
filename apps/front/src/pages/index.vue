@@ -120,6 +120,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .home{
     &-content{
       position: relative;
@@ -133,6 +135,10 @@
         
         background: white;
         padding: 16px;
+
+        @media only screen and (max-width: 495px) {
+          top: 0;
+        }
       }
 
       &-main{

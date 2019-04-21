@@ -1,0 +1,118 @@
+//## Alpha values for grey text, icons, and dividers
+$gray-darker:            #212121; // #212121 - text
+$gray-dark:              #757575; // #757575 - secondary text, icons
+$gray:                   #bdbdbd; // #bdbdbd - hint text
+$gray-light:             #e0e0e0; // #e0e0e0 - divider
+$gray-lighter:           #f5f5f5; // #f5f5f5 - background
+
+//** Typographic Scale
+$font-size-display-4:       112;
+$font-size-display-3:       56;
+$font-size-display-2:       45;
+$font-size-display-1:       34;
+$font-size-headline:        24;
+$font-size-title:           20;
+$font-size-subhead-2:       18;
+$font-size-subhead-1:       18;
+$font-size-body-2:          16;
+$font-size-body-1:          16;
+$font-size-caption:         12;
+$font-size-label:           12;
+$font-size-menu:            13;
+$font-size-button:          14;
+
+//** Typographic Scale for devices (max-width: 960px)
+$font-size-dv-subhead:      16;
+$font-size-dv-body:         14;
+$font-size-dv-menu:         14;
+
+//** Basic Styles
+$font-weight-display-4:     100;
+$font-weight-display-3:     300;
+$font-weight-display-2:     300;
+$font-weight-display-1:     300;
+$font-weight-headline:      300;
+$font-weight-title:         400;
+$font-weight-subhead-2:     400;
+$font-weight-subhead-1:     300;
+$font-weight-body-2:        400;
+$font-weight-body-1:        300;
+$font-weight-caption:       300;
+$font-weight-label:         300;
+$font-weight-menu:          400;
+$font-weight-button:        400;
+
+//** Line Height
+$line-height-display-4:     128;
+$line-height-display-3:     84;
+$line-height-display-2:     48;
+$line-height-display-1:     40;
+$line-height-headline:      32;
+$line-height-title:         28;
+$line-height-subhead-2:     28;
+$line-height-subhead-1:     24;
+$line-height-body-2:        24;
+$line-height-body-1:        22;
+$line-height-caption:       20;
+$line-height-label:         20;
+$line-height-menu:          20;
+$line-height-button:        20;
+
+//** Tracking and kerning
+$letter-spacing-display-4: -0.1;
+$letter-spacing-display-3: -0.05;
+$letter-spacing-display-2: 0;
+$letter-spacing-display-1: 0;
+$letter-spacing-headline:  0;
+$letter-spacing-title:     0.05;
+$letter-spacing-subhead-2: 0.1;
+$letter-spacing-subhead-1: 0.1;
+$letter-spacing-body-2:    0.1;
+$letter-spacing-body-1:    0.1;
+$letter-spacing-caption:   0.2;
+$letter-spacing-label:     0.1;
+$letter-spacing-menu:      0.1;
+$letter-spacing-button:    0.1;
+
+//** Basic colors/Color contrast
+$font-color-display-4:      $gray-dark;
+$font-color-display-3:      $gray-dark;
+$font-color-display-2:      $gray-dark;
+$font-color-display-1:      $gray-dark;
+$font-color-headline:       $gray-darker;
+$font-color-title:          $gray-darker;
+$font-color-subhead-2:      $gray-darker;
+$font-color-subhead-1:      $gray-darker;
+$font-color-body-2:         $gray-darker;
+$font-color-body-1:         $gray-darker;
+$font-color-caption:        $gray-dark;
+$font-color-label:          $gray-darker;
+$font-color-menu:           $gray-darker;
+$font-color-button:         $gray-darker;
+
+
+
+// Mixins
+@mixin font-size($fontSize: 14) {
+  font-size: $fontSize+0px; 
+  font-size: ($fontSize/10)+0rem;
+}
+
+@mixin line-height($leadingSize: 14) {
+  line-height: $leadingSize+0px; 
+  line-height: ($leadingSize/10)+0rem;
+}
+
+@mixin letter-spacing($kerningSize: 0) {
+  letter-spacing: $kerningSize+0px; 
+  letter-spacing: ($kerningSize/10)+0rem;
+}
+
+@mixin font($fontSize, $leadingSize, $kerningSize) {
+  font-size: $fontSize+0px; 
+  font-size: ($fontSize/10)+0rem;
+  line-height: $leadingSize+0px; 
+  line-height: ($leadingSize/10)+0rem;
+  letter-spacing: $kerningSize+0px; 
+  letter-spacing: ($kerningSize/10)+0rem;
+}

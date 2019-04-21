@@ -70,6 +70,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt-images{
     display: grid;
     // grid-template-columns: repeat(3, 1fr);

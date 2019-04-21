@@ -25,6 +25,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .become-member-fieldset{
     $size: 28px;
 

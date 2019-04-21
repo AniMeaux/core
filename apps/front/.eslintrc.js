@@ -24,10 +24,5 @@ module.exports = {
     "import/no-unresolved": 0,
     "import/extensions": ["off", "never"],
   },
-  globals: {},
-  settings: {
-    'import/resolver': {
-      webpack: 'webpack.config.js',
-    },
-  },
+  globals: {}
 }

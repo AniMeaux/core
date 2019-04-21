@@ -1,5 +1,10 @@
 <template>
-  <div class="app-header">
+  <div
+    class="app-header"
+    :class="{
+      scrolled
+    }"
+  >
     <div class="wrap">
       <a @click.prevent="mobile = !mobile" class="app-header-menu">
         <transition name="fade" mode="out-in">
@@ -71,6 +76,12 @@
             title: 'Nos animaux adoptés',
             color: 'green',
           },
+          {
+            to: '/blog',
+            name: 'Blog',
+            title: 'Notre blog',
+            color: 'red',
+          },
           // {
           //   to: '/events',
           //   name: 'Agenda',
@@ -85,12 +96,27 @@
           },
         ],
         mobile: false,
+        scrolled: false,
       };
+    },
+    mounted() {
+      window.addEventListener('scroll', this.updateScroll);
+    },
+    beforeDestroy() {
+      window.removeEventListener('scroll', this.updateScroll);
+    },
+    methods: {
+      updateScroll() {
+        const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+        this.scrolled = scrollPosition > 50;
+      },
     },
   };
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   $header-height: 70px;
   $header-shadow-size: 2px;
 
@@ -103,8 +129,11 @@
     z-index: 10;
 
     height: $header-height;
-
     background-color: white;
+
+    &.scrolled{
+      box-shadow: 0 3px 12px rgba(black, 0.08);
+    }
 
     .wrap{
       display: flex;
@@ -117,7 +146,7 @@
       width: 45px;
       text-align: center;
 
-      @media only screen and (max-width: 495px) {
+      @media only screen and (max-width: 720px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -135,7 +164,7 @@
       img{
         margin: auto 0;
 
-        @media only screen and (max-width: 495px) {
+        @media only screen and (max-width: 720px) {
           display: none;
 
           &.mobile{
@@ -159,7 +188,7 @@
         margin: 0;
         box-shadow: 0 3px 3px rgba(black, 0.12);
 
-        @media only screen and (max-width: 495px) {
+        @media only screen and (max-width: 720px) {
           display: flex;
         }
 
@@ -179,7 +208,7 @@
         }
       }
 
-      @media only screen and (max-width: 495px) {
+      @media only screen and (max-width: 720px) {
         display: none;
       }
 
@@ -199,6 +228,7 @@
         height: $header-height;
         text-align: center;
         text-decoration: none;
+        text-transform: uppercase;
         vertical-align: middle;
 
         padding: 0 16px;
@@ -255,7 +285,7 @@
       }
     }
 
-    @media only screen and (max-width: 495px) {
+    @media only screen and (max-width: 720px) {
       padding: 0 16px;
     }
   }

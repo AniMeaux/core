@@ -33,6 +33,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .home-donation{
     background-color: $blue;
     padding: 16px 16px 32px 16px;

@@ -67,6 +67,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt-categories{
     padding: 24px 0;
     

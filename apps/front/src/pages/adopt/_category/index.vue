@@ -72,6 +72,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt-category{
     background-color: #F7F7F7;
     

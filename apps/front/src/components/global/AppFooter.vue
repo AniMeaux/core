@@ -79,6 +79,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .app-footer{
     &-navigation{
       border-bottom: 1px solid lightgray;

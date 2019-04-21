@@ -35,6 +35,8 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .home-warning{
     background-color: $red;
     padding: 24px;
