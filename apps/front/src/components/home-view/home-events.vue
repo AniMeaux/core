@@ -1,14 +1,13 @@
 <template>
-  <div class="home-events" v-if="items.length > 0">
+  <div v-if="items.length > 0" class="home-events">
     <h2 class="headline home-events-title">
       <i class="material-icons" aria-hidden="true">today</i>
       Evénements à venir
     </h2>
     <event-item
-      v-if="items.length > 0"
       v-for="(item, k) in items"
-      :key="k"
       :id="item.id"
+      :key="k"
       :name="item.name"
       :description="item.description"
       :url="item.url"
@@ -19,31 +18,31 @@
 </template>
 
 <script>
-  import moment from 'moment';
-  import EventItem from './home-events/event-item';
+import moment from 'moment'
+import EventItem from './home-events/event-item'
 
-  /**
+/**
     component - homeEvents
    */
-  export default {
-    name: 'home-events',
-    components: {
-      EventItem,
-    },
-    data() {
-      return {
-        items: [],
-        begin: moment('2018-07-07'),
-      };
-    },
-    created() {
-      this.$api.get('/events').then((res) => {
-        if (res.ok) {
-          this.items = res.data;
-        }
-      });
-    },
-  };
+export default {
+  name: 'HomeEvents',
+  components: {
+    EventItem
+  },
+  data() {
+    return {
+      items: [],
+      begin: moment('2018-07-07')
+    }
+  },
+  created() {
+    this.$api.get('/events').then((res) => {
+      if (res.ok) {
+        this.items = res.data
+      }
+    })
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -64,4 +63,3 @@
     }
   }
 </style>
-

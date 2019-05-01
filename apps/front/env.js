@@ -1,10 +1,10 @@
-module.exports = {
+export default {
   API: {
-    BASE_URL: 'https://api.animeaux.org'
+    BASE_URL: 'http://backend:3000'
   },
   GOOGLE: {
     ANALYTICS: {
-      ID: 'UA-118470648-1'
+      ID: 'fakeid'
     }
   },
   CLOUDINARY: {

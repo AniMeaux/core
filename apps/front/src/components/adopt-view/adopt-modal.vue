@@ -1,9 +1,9 @@
 <template>
   <transition v-if="data" name="modal" mode="out-in">
-    <div class="adopt-modal" v-if="visible">
+    <div v-if="visible" class="adopt-modal">
       <div class="adopt-modal-content">
         <h2 class="subhead-2">
-          Adoptez {{ data.name }} !
+          Adoptez {{ data.name }} !
         </h2>
         <p class="body-1">
           Vous souhaitez adopter {{ data.name }} ? Vous pouvez nous contacter sur <a href="mailto:adoption@animeaux.org">adoption@animeaux.org</a> ou par <a href="tel:+33612194392">téléphone</a>.
@@ -20,24 +20,24 @@
 </template>
 
 <script>
-  export default {
-    name: 'adopt-modal',
-    props: {
-      data: {
-        type: Object,
-        required: true,
-      },
-      visible: {
-        type: Boolean,
-        default: false,
-      },
+export default {
+  name: 'AdoptModal',
+  props: {
+    data: {
+      type: Object,
+      required: true
     },
-    methods: {
-      close() {
-        this.$emit('close');
-      },
-    },
-  };
+    visible: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    close() {
+      this.$emit('close')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -66,7 +66,7 @@
     }
   }
 
-  .modal{  
+  .modal{
     &-enter, &-leave-to{
       transform: scale(0.9);
       opacity: 0;

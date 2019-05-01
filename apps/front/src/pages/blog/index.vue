@@ -21,7 +21,7 @@
             {{ post.title }}
           </div>
           <div class="body-1 blog-post-caption">
-            {{ post.excerpt }}
+            {{ post.excerpt }}
           </div>
         </nuxt-link>
       </div>
@@ -30,41 +30,42 @@
 </template>
 
 <script>
-  export default {
-    name: 'blog',
-    data() {
-      return {
-        posts: [],
-      };
-    },
-    async asyncData({ app }) {
-      let response;
-      try {
-        response = await app.$axios.$get('https://blog.animeaux.org/ghost/api/v2/content/posts?key=dff6b48a732db0bc1ad086371e');
-      } catch (e) {
-        console.error('Could not fetch blog posts', e);
-      }
-      return {
-        posts: response ? response.posts : [],
-      };
-    },
-    head() {
-      return {
-        title: 'Blog',
-        meta: [
-          {
-            hid: 'description', name: 'description', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !',
-          },
-          {
-            hid: 'og:description', name: 'og:description', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !',
-          },
-          {
-            hid: 'og:twitter', name: 'og:twitter', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !',
-          },
-        ],
-      };
-    },
-  };
+export default {
+  name: 'Blog',
+  data() {
+    return {
+      posts: []
+    }
+  },
+  async asyncData({ app }) {
+    let response
+    try {
+      response = await app.$axios.$get('https://blog.animeaux.org/ghost/api/v2/content/posts?key=dff6b48a732db0bc1ad086371e')
+    } catch (e) {
+      // eslint-disable-next-line
+      console.error('Could not fetch blog posts', e)
+    }
+    return {
+      posts: response ? response.posts : []
+    }
+  },
+  head() {
+    return {
+      title: 'Blog',
+      meta: [
+        {
+          hid: 'description', name: 'description', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !'
+        },
+        {
+          hid: 'og:description', name: 'og:description', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !'
+        },
+        {
+          hid: 'og:twitter', name: 'og:twitter', content: 'Retrouvez toute notre actualité, nos astuces ainsi que nos articles sur notre blog !'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -82,7 +83,7 @@
         background-color: $red;
       }
     }
-    
+
     &__posts{
       display: grid;
       grid-template-columns: repeat(4, 1fr);

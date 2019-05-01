@@ -35,27 +35,23 @@
 </template>
 
 <script>
-  import moment from 'moment';
+import moment from 'moment'
 
-  export default {
-    name: 'adopt-specs',
-    props: {
-      data: {
-        type: Object,
-      },
+export default {
+  name: 'AdoptSpecs',
+  props: {
+    data: {
+      type: Object,
+      default: null
+    }
+  },
+  computed: {
+    age() {
+      return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null
     },
-    computed: {
-      age() {
-        return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null;
-      },
-      gender() {
-        return this.data.gender === 'male' ? 'male' : 'femelle';
-      },
-    },
-  };
-</script>
-
-<style lang="scss" scoped>
-  .adopt-specs{
+    gender() {
+      return this.data.gender === 'male' ? 'male' : 'femelle'
+    }
   }
-</style>
+}
+</script>

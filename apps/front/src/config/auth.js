@@ -4,17 +4,17 @@ module.exports = {
       login: {
         url: '/api/auth/login',
         method: 'post',
-        propertyName: 'token',
+        propertyName: 'token'
       },
       logout: {
         url: '/api/auth/logout',
-        method: 'post',
+        method: 'post'
       },
       user: {
         url: '/api/auth/user',
         method: 'get',
-        propertyName: 'user',
-      },
-    },
-  },
-};
+        propertyName: 'user'
+      }
+    }
+  }
+}

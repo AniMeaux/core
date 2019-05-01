@@ -24,46 +24,46 @@
 </template>
 
 <script>
-  export default {
-    name: 'adopt-categories',
-    props: {
-      success: {
-        type: Boolean,
-        default: false,
-      },
-    },
-    data() {
-      return {
-        categories: {
-          dog: {
-            name: 'Chiens',
-            icon: 'dog.svg',
-            color: 'blue',
-          },
-          cat: {
-            name: 'Chats',
-            icon: 'cat.svg',
-            color: 'red',
-          },
-          reptile: {
-            name: 'Reptiles',
-            icon: 'snake.svg',
-            color: 'green',
-          },
-          bird: {
-            name: 'Oiseaux',
-            icon: 'parrot.svg',
-            color: 'yellow',
-          },
-          rodent: {
-            name: 'Rongeurs',
-            icon: 'bunny.svg',
-            color: 'lightblue',
-          },
+export default {
+  name: 'AdoptCategories',
+  props: {
+    success: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      categories: {
+        dog: {
+          name: 'Chiens',
+          icon: 'dog.svg',
+          color: 'blue'
         },
-      };
-    },
-  };
+        cat: {
+          name: 'Chats',
+          icon: 'cat.svg',
+          color: 'red'
+        },
+        reptile: {
+          name: 'Reptiles',
+          icon: 'snake.svg',
+          color: 'green'
+        },
+        bird: {
+          name: 'Oiseaux',
+          icon: 'parrot.svg',
+          color: 'yellow'
+        },
+        rodent: {
+          name: 'Rongeurs',
+          icon: 'bunny.svg',
+          color: 'lightblue'
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -71,7 +71,7 @@
 
   .adopt-categories{
     padding: 24px 0;
-    
+
     ul, li{
       margin: 0;
       padding: 0;
@@ -121,7 +121,7 @@
         font-size: 16px;
         text-transform: uppercase;
         margin-left: 8px;
-        
+
         @media only screen and (max-width: 495px) {
           display: none;
         }

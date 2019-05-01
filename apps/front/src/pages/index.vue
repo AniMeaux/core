@@ -24,7 +24,7 @@
           </section>
           <section id="teaming">
             <a href="https://www.teaming.net/ani-meaux" rel="noindex nofollow">
-              <img src="~/assets/img/logo-teaming.png" width="180" alt="Logo Teaming" />
+              <img src="~/assets/img/logo-teaming.png" width="180" alt="Logo Teaming">
             </a>
             <div class="teaming-container">
               <h2 class="headline">
@@ -41,7 +41,7 @@
           <section id="zooplus">
             <div>
               <a href="https://marketing.net.zooplus.fr/ts/i3971185/tsc?amc=con.zooplus.391263.404652.6883&tst=!!TIMESTAMP!!" title="Profitez de promotions de offres spéciales" target="_blank" rel="nofollow">
-                <img src="https://marketing.net.zooplus.fr/ts/i3971185/tsv?amc=con.zooplus.391263.404652.6883&tst=!!TIMESTAMP!!" border=0 width="300" height="250" alt="zooplus.fr" />
+                <img src="https://marketing.net.zooplus.fr/ts/i3971185/tsv?amc=con.zooplus.391263.404652.6883&tst=!!TIMESTAMP!!" border="0" width="300" height="250" alt="zooplus.fr">
               </a>
             </div>
             <div>
@@ -63,60 +63,60 @@
         </aside>
       </div>
     </div>
-    <home-newsletter/>
+    <home-newsletter />
   </section>
 </template>
 
 <script>
-  import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions } from 'vuex'
 
-  import HomeCarousel from '~/components/home-view/home-carousel';
-  import HomeFacebook from '~/components/home-view/home-facebook';
-  import HomeEvents from '~/components/home-view/home-events';
-  import HomeNewsletter from '~/components/home-view/home-newsletter';
-  import HomeWarning from '~/components/home-view/home-warning';
+import HomeCarousel from '~/components/home-view/home-carousel'
+import HomeFacebook from '~/components/home-view/home-facebook'
+import HomeEvents from '~/components/home-view/home-events'
+import HomeNewsletter from '~/components/home-view/home-newsletter'
+import HomeWarning from '~/components/home-view/home-warning'
 
-  export default {
-    components: {
-      HomeCarousel,
-      HomeFacebook,
-      HomeEvents,
-      HomeNewsletter,
-      HomeWarning,
-    },
-    methods: {
-      ...mapActions(['setWarningVisible']),
-    },
-    computed: {
-      ...mapGetters(['isWarningVisible']),
-    },
-    mounted() {
-      this.$localForage.getItem('warningVisible')
-        .then((res) => {
-          this.loading = false;
-          if (res !== null) {
-            this.setWarningVisible(res);
-          }
-        });
-    },
-    data() {
-      return {
-        loading: true,
-      };
-    },
-    head() {
-      return {
-        title: 'Association de protection animale',
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
-          },
-        ],
-      };
-    },
-  };
+export default {
+  components: {
+    HomeCarousel,
+    HomeFacebook,
+    HomeEvents,
+    HomeNewsletter,
+    HomeWarning
+  },
+  data() {
+    return {
+      loading: true
+    }
+  },
+  computed: {
+    ...mapGetters(['isWarningVisible'])
+  },
+  mounted() {
+    this.$localForage.getItem('warningVisible')
+      .then((res) => {
+        this.loading = false
+        if (res !== null) {
+          this.setWarningVisible(res)
+        }
+      })
+  },
+  methods: {
+    ...mapActions(['setWarningVisible'])
+  },
+  head() {
+    return {
+      title: 'Association de protection animale',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.'
+        }
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -132,7 +132,7 @@
       &-side, &-main{
         position: relative;
         top: -70px;
-        
+
         background: white;
         padding: 16px;
 
@@ -154,7 +154,7 @@
       }
     }
   }
-  
+
   #teaming{
     display: grid;
     grid-template-columns: 3fr 5fr;
@@ -189,7 +189,7 @@
       background-image: none;
       border: 1px solid transparent;
       border-radius: 4px;
-      
+
       color: #fff;
       background: -moz-linear-gradient(top,#8cd8ff 0,#05abff 100%);
       background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#8cd8ff),color-stop(100%,#05abff));
@@ -206,7 +206,7 @@
       grid-template-columns: 100%;
     }
   }
-  
+
   #zooplus{
     display: grid;
     grid-template-columns: 3fr 5fr;

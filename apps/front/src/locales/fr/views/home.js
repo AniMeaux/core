@@ -1,5 +1,5 @@
 export default {
   meta: {
-    title: 'Ani\'Meaux',
-  },
-};
+    title: 'Ani\'Meaux'
+  }
+}

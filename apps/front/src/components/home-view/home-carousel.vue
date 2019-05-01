@@ -14,9 +14,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'home-carousel',
-  };
+export default {
+  name: 'HomeCarousel'
+}
 </script>
 
 <style lang="scss" scoped>
@@ -50,10 +50,6 @@
       background-color: rgba(black, 0.2);
       padding: 10px;
       width: fit-content;
-    }
-
-    &-title{
-
     }
   }
 </style>

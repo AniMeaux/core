@@ -6,7 +6,7 @@
     }"
   >
     <div class="wrap">
-      <a @click.prevent="mobile = !mobile" class="app-header-menu">
+      <a class="app-header-menu" @click.prevent="mobile = !mobile">
         <transition name="fade" mode="out-in">
           <i v-if="!mobile" key="menu" class="material-icons" aria-hidden="true">menu</i>
           <i v-else key="close" class="material-icons" aria-hidden="true">close</i>
@@ -20,14 +20,14 @@
             alt="Logo Ani'Meaux"
             src="~/assets/img/logo-icon.svg"
             :height="60"
-          />
+          >
           <img
             class="desktop"
             title="Logo Ani'Meaux"
             alt="Logo Ani'Meaux"
             src="~/assets/img/logo-simple.svg"
             :height="60"
-          />
+          >
         </nuxt-link>
       </div>
       <nav class="app-header-navigation" :class="{ mobile: mobile }">
@@ -37,8 +37,9 @@
               :to="link.to"
               :title="link.title"
               :class="[link.color]"
+              class="button"
               @click.native="mobile ? mobile = false : false"
-              class="button">
+            >
               <span>
                 {{ link.name }}
               </span>
@@ -59,59 +60,59 @@
 </template>
 
 <script>
-  export default {
-    name: 'app-header',
-    data() {
-      return {
-        links: [
-          {
-            to: '/adopt',
-            name: 'À adopter',
-            title: 'Nos animaux à l\'adoption',
-            color: 'blue',
-          },
-          {
-            to: '/success',
-            name: 'Nos réussites',
-            title: 'Nos animaux adoptés',
-            color: 'green',
-          },
-          {
-            to: '/blog',
-            name: 'Blog',
-            title: 'Notre blog',
-            color: 'red',
-          },
-          // {
-          //   to: '/events',
-          //   name: 'Agenda',
-          //   title: 'Tous nos événements',
-          //   color: 'red',
-          // },
-          {
-            to: '/contact',
-            name: 'Nous contacter',
-            title: 'Des questions? Contactez-nous',
-            color: 'lightblue',
-          },
-        ],
-        mobile: false,
-        scrolled: false,
-      };
-    },
-    mounted() {
-      window.addEventListener('scroll', this.updateScroll);
-    },
-    beforeDestroy() {
-      window.removeEventListener('scroll', this.updateScroll);
-    },
-    methods: {
-      updateScroll() {
-        const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
-        this.scrolled = scrollPosition > 50;
-      },
-    },
-  };
+export default {
+  name: 'AppHeader',
+  data() {
+    return {
+      links: [
+        {
+          to: '/adopt',
+          name: 'À adopter',
+          title: 'Nos animaux à l\'adoption',
+          color: 'blue'
+        },
+        {
+          to: '/success',
+          name: 'Nos réussites',
+          title: 'Nos animaux adoptés',
+          color: 'green'
+        },
+        {
+          to: '/blog',
+          name: 'Blog',
+          title: 'Notre blog',
+          color: 'red'
+        },
+        // {
+        //   to: '/events',
+        //   name: 'Agenda',
+        //   title: 'Tous nos événements',
+        //   color: 'red',
+        // },
+        {
+          to: '/contact',
+          name: 'Nous contacter',
+          title: 'Des questions? Contactez-nous',
+          color: 'lightblue'
+        }
+      ],
+      mobile: false,
+      scrolled: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll)
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.updateScroll)
+  },
+  methods: {
+    updateScroll() {
+      const scrollPosition = document.documentElement.scrollTop || document.body.scrollTop
+      this.scrolled = scrollPosition > 50
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -173,7 +174,7 @@
         }
       }
     }
-    
+
     &-navigation{
       margin-left: 32px;
 
@@ -212,7 +213,6 @@
         display: none;
       }
 
-      
       ul, li{
         margin: 0;
         padding: 0;
@@ -240,7 +240,6 @@
         span{
           margin: auto;
         }
-
 
         &.nuxt-link-active{
           border-bottom-width: 3px;
