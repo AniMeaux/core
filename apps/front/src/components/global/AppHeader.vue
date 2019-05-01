@@ -78,6 +78,12 @@ export default {
           color: 'green'
         },
         {
+          to: '/partners',
+          name: 'Nos partenaires',
+          title: 'Nos partenaires',
+          color: 'yellow'
+        },
+        {
           to: '/blog',
           name: 'Blog',
           title: 'Notre blog',
@@ -147,7 +153,7 @@ export default {
       width: 45px;
       text-align: center;
 
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: 784px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -165,7 +171,7 @@ export default {
       img{
         margin: auto 0;
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 784px) {
           display: none;
 
           &.mobile{
@@ -189,7 +195,7 @@ export default {
         margin: 0;
         box-shadow: 0 3px 3px rgba(black, 0.12);
 
-        @media only screen and (max-width: 720px) {
+        @media only screen and (max-width: 784px) {
           display: flex;
         }
 
@@ -209,7 +215,7 @@ export default {
         }
       }
 
-      @media only screen and (max-width: 720px) {
+      @media only screen and (max-width: 784px) {
         display: none;
       }
 
@@ -284,7 +290,7 @@ export default {
       }
     }
 
-    @media only screen and (max-width: 720px) {
+    @media only screen and (max-width: 784px) {
       padding: 0 16px;
     }
   }
