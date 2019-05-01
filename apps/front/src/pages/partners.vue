@@ -18,6 +18,15 @@
           <a href="https://www.ha-solidaire.com" target="_blank" rel="noopener nofollow">
             <img src="https://www.ha-solidaire.com/images/logo.png" alt="Ha-Solidaire" height="300">
           </a>
+          <a href="https://mrcroquette.fr/" target="_blank" rel="noopener nofollow">
+            <img src="~/assets/img/partners/mrcroquette.png" alt="Mr. Croquette" height="300">
+          </a>
+          <a href="https://www.tunetoo.com/" target="_blank" rel="noopener nofollow">
+            <img src="~/assets/img/partners/tunetoo.jpg" alt="Tunetoo" height="300">
+          </a>
+          <a href="https://nominoo.fr/" target="_blank" rel="noopener nofollow">
+            <img src="~/assets/img/partners/nominoo.jpg" alt="Nominoo" height="300">
+          </a>
         </div>
       </div>
     </div>
@@ -53,6 +62,7 @@ export default {
 
       a {
         margin-right: 16px;
+        margin-bottom: 16px;
 
         img {
           max-width: 100%;
