@@ -4,7 +4,7 @@
       {{ name }}
     </h3>
     <span class="caption event-item-date">
-      Du {{ getBegin }} au {{ getEnd }}
+      Du {{ getBegin }} au {{ getEnd }}
     </span>
     <p class="body-1 event-item-description">
       {{ description }}
@@ -13,37 +13,45 @@
 </template>
 
 <script>
-  import moment from 'moment';
+import moment from 'moment'
 
-  export default {
-    name: 'event-item',
-    props: {
-      id: {
-        type: Number,
-      },
-      name: {
-        type: String,
-      },
-      description: {
-        type: String,
-      },
-      url: {
-        type: String,
-      },
-      begin: {
-      },
-      end: {
-      },
+export default {
+  name: 'EventItem',
+  props: {
+    id: {
+      type: Number,
+      default: null
     },
-    computed: {
-      getBegin() {
-        return moment(this.begin).format('DD MMMM [à] HH:mm');
-      },
-      getEnd() {
-        return moment(this.end).format('DD MMMM [à] HH:mm');
-      },
+    name: {
+      type: String,
+      default: null
     },
-  };
+    description: {
+      type: String,
+      default: null
+    },
+    url: {
+      type: String,
+      default: null
+    },
+    begin: {
+      type: String,
+      default: null
+    },
+    end: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    getBegin() {
+      return moment(this.begin).format('DD MMMM [à] HH:mm')
+    },
+    getEnd() {
+      return moment(this.end).format('DD MMMM [à] HH:mm')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -85,4 +93,3 @@
     }
   }
 </style>
-

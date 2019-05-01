@@ -2,3 +2,4 @@ static/*.js
 libs/*
 karma.conf.js
 tests/*
+src/static/sw.js

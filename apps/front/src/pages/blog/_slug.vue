@@ -6,8 +6,7 @@
       :style="{
         backgroundImage: `url(${post.feature_image})`
       }"
-    >
-    </div>
+    />
     <div class="wrap">
       <article class="blog__container">
         <div class="blog__header">
@@ -23,77 +22,78 @@
             </div>
           </div>
         </div>
-        <div class="blog__content" v-html="post.html"></div>
+        <!-- eslint-disable -->
+        <div class="blog__content" v-html="post.html" />
+        <!-- eslint-enable -->
       </article>
     </div>
   </div>
 </template>
 
 <script>
-  import moment from 'moment';
+import moment from 'moment'
 
-  export default {
-    name: 'Blog',
-    validate({ route }) {
-      return !!route.params.slug;
-    },
-    async asyncData({ app, route, redirect }) {
-      let response;
-      try {
-        response = await app.$axios.$get(`https://blog.animeaux.org/ghost/api/v2/content/posts/slug/${route.params.slug}?key=dff6b48a732db0bc1ad086371e&include=authors`);
-      } catch (e) {
-        redirect('/blog');
-        console.error('Could not fetch blog posts', e);
-      }
-      return {
-        post: response.posts[0],
-      };
-    },
-    computed: {
-      publishDate() {
-        return moment(this.post.published_at).format('lll');
+export default {
+  name: 'Blog',
+  validate({ route }) {
+    return !!route.params.slug
+  },
+  computed: {
+    publishDate() {
+      return moment(this.post.published_at).format('lll')
+    }
+  },
+  async asyncData({ app, route, redirect }) {
+    let response
+    try {
+      response = await app.$axios.$get(`https://blog.animeaux.org/ghost/api/v2/content/posts/slug/${route.params.slug}?key=dff6b48a732db0bc1ad086371e&include=authors`)
+    } catch (e) {
+      redirect('/blog')
+    }
+    return {
+      post: response.posts[0]
+    }
+  },
+  head() {
+    const hasImage = this.post.feature_image ? [
+      {
+        hid: 'og:image', name: 'og:image', content: this.post.feature_image
       },
-    },
-    head() {
-      const hasImage = this.post.feature_image ? [
-        {
-          hid: 'og:image', name: 'og:image', content: this.post.feature_image,
-        },
-        {
-          hid: 'twitter:image', name: 'twitter:image', content: this.post.feature_image,
-        },
-      ] : [];
+      {
+        hid: 'twitter:image', name: 'twitter:image', content: this.post.feature_image
+      }
+    ] : []
 
-      return {
-        title: this.post.title,
-        titleTemplate: 'Ani\'Meaux - Blog - %s',
-        meta: [
-          {
-            hid: 'description', name: 'description', content: this.post.excerpt,
-          },
-          {
-            hid: 'og:type', name: 'og:type', content: 'article',
-          },
-          {
-            hid: 'og:url', name: 'og:url', content: `https://www.animeaux.org${this.$route.path}`,
-          },
-          {
-            hid: 'og:description', name: 'og:description', content: this.post.excerpt,
-          },
-          {
-            hid: 'twitter:description', name: 'twitter:description', content: this.post.excerpt,
-          },
-          {
-            hid: 'og:title', name: 'og:title', content: this.post.title,
-          },
-          {
-            hid: 'twitter:title', name: 'twitter:title', content: this.post.title,
-          },
-          ...hasImage,
-        ],
-      };
-    },
-  };
+    return {
+      title: this.post.title,
+      titleTemplate: 'Ani\'Meaux - Blog - %s',
+      meta: [
+        {
+          hid: 'description', name: 'description', content: this.post.excerpt
+        },
+        {
+          hid: 'og:type', name: 'og:type', content: 'article'
+        },
+        {
+          hid: 'og:url', name: 'og:url', content: `https://www.animeaux.org${this.$route.path}`
+        },
+        {
+          hid: 'og:description', name: 'og:description', content: this.post.excerpt
+        },
+        {
+          hid: 'twitter:description', name: 'twitter:description', content: this.post.excerpt
+        },
+        {
+          hid: 'og:title', name: 'og:title', content: this.post.title
+        },
+        {
+          hid: 'twitter:title', name: 'twitter:title', content: this.post.title
+        },
+        ...hasImage
+      ]
+    }
+  }
+}
 </script>
 
 <style lang="scss">
@@ -105,14 +105,14 @@
         padding: 0 16px;
       }
     }
-    
+
     &__featured-image{
       width: 100%;
       height: 400px;
       background-size: cover;
       background-position: center;
     }
-    
+
     &__header{
       margin-bottom: 32px;
 
@@ -130,14 +130,14 @@
         width: 100%;
       }
     }
-    
+
     &__content{
       h2{
         font-size: 24px;
         color: $primary-text;
         font-weight: 500;
       }
-      
+
       p {
         font-size: 16px;
         line-height: 1.5;

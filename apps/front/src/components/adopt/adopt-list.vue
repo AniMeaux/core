@@ -10,23 +10,24 @@
 </template>
 
 <script>
-  import AdoptListItem from './adopt-list/adopt-list-item';
+import AdoptListItem from './adopt-list/adopt-list-item'
 
-  export default {
-    name: 'adopt-list',
-    props: {
-      success: {
-        type: Boolean,
-        default: false,
-      },
-      animals: {
-        type: Array,
-      },
+export default {
+  name: 'AdoptList',
+  components: {
+    AdoptListItem
+  },
+  props: {
+    success: {
+      type: Boolean,
+      default: false
     },
-    components: {
-      AdoptListItem,
-    },
-  };
+    animals: {
+      type: Array,
+      default: null
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -34,7 +35,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 16px;
-    
+
     list-style-type: none;
     margin: 0;
     padding: 0;

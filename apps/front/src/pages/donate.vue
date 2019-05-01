@@ -5,12 +5,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'donate',
-  };
+export default {
+  name: 'Donate'
+}
 </script>
-
-<style lang="scss" scoped>
-  .donate{
-  }
-</style>

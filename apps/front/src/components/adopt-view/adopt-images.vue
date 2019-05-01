@@ -18,7 +18,6 @@
       />
     </div>
     <button
-      v-if="data.images.length > 0"
       v-for="(image, k) in data.images"
       :key="k"
       class="adopt-images-button"
@@ -39,7 +38,7 @@
         ]"
       />
     </button>
-    
+
     <div v-if="data.images.length === 0" class="adopt-images-empty">
       <span class="body-1">
         Aucune image disponible
@@ -49,24 +48,25 @@
 </template>
 
 <script>
-  import Cloudinary from '~/components/global/cloudinary';
+import Cloudinary from '~/components/global/cloudinary'
 
-  export default {
-    name: 'adopt-images',
-    props: {
-      data: {
-        type: Object,
-      },
-    },
-    data() {
-      return {
-        currentImage: this.data.images[0],
-      };
-    },
-    components: {
-      Cloudinary,
-    },
-  };
+export default {
+  name: 'AdoptImages',
+  components: {
+    Cloudinary
+  },
+  props: {
+    data: {
+      type: Object,
+      default: null
+    }
+  },
+  data() {
+    return {
+      currentImage: this.data.images[0]
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

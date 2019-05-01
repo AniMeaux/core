@@ -12,14 +12,14 @@
 </template>
 
 <script>
-  import BecomeMemberForm from '~/components/become-member-view/become-member-form';
+import BecomeMemberForm from '~/components/become-member-view/become-member-form'
 
-  export default {
-    name: 'become-member',
-    components: {
-      BecomeMemberForm,
-    },
-  };
+export default {
+  name: 'BecomeMember',
+  components: {
+    BecomeMemberForm
+  }
+}
 </script>
 
 <style lang="scss" scoped>

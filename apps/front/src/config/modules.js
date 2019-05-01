@@ -1,4 +1,4 @@
-const env = require('./env');
+const env = require('./env')
 
 module.exports = [
   '@nuxtjs/pwa',
@@ -8,11 +8,11 @@ module.exports = [
   '@nuxtjs/sitemap',
   'nuxt-robots-module',
   ['@nuxtjs/google-analytics', {
-    id: env.GOOGLE.ANALYTICS.ID,
+    id: env.GOOGLE.ANALYTICS.ID
   }],
   ['@nuxtjs/style-resources', {
     scss: [
-      '~/assets/scss/variables/_colors.scss',
-    ],
-  }],
-];
+      '~/assets/scss/variables/_colors.scss'
+    ]
+  }]
+]

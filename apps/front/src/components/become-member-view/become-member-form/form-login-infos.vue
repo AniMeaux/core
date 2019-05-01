@@ -6,17 +6,17 @@
     >
       <div class="fields">
         <a-input
+          v-model="form.email"
           type="email"
           name="email"
           label="Adresse e-mail:"
-          v-model="form.email"
         />
 
         <a-input
+          v-model="form.password"
           type="password"
           name="password"
           label="Mot de passe:"
-          v-model="form.password"
         />
       </div>
     </become-member-fieldset>
@@ -24,24 +24,24 @@
 </template>
 
 <script>
-  import BecomeMemberFieldset from '~/components/become-member-view/become-member-fieldset';
-  import AInput from '~/components/ui/a-input';
+import BecomeMemberFieldset from '~/components/become-member-view/become-member-fieldset'
+import AInput from '~/components/ui/a-input'
 
-  export default {
-    name: 'form-login-infos',
-    data() {
-      return {
-        form: {
-          email: null,
-          password: null,
-        },
-      };
-    },
-    components: {
-      AInput,
-      BecomeMemberFieldset,
-    },
-  };
+export default {
+  name: 'FormLoginInfos',
+  components: {
+    AInput,
+    BecomeMemberFieldset
+  },
+  data() {
+    return {
+      form: {
+        email: null,
+        password: null
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

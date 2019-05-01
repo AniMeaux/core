@@ -12,43 +12,43 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Ani\'Meaux - Association de protection animale',
+        content: 'Ani\'Meaux - Association de protection animale'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
+        content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.'
       },
       {
         hid: 'twitter:title',
         property: 'twitter:title',
-        content: 'Ani\'Meaux - Association de protection animale',
+        content: 'Ani\'Meaux - Association de protection animale'
       },
       {
         hid: 'twitter:description',
         property: 'twitter:description',
-        content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.',
+        content: 'Site officiel de l\'association de protection animale Ani\'Meaux, basé sur la ville de Meaux et ses environs.'
       },
       {
         hid: 'og:url',
         property: 'og:url',
-        content: 'https://www.animeaux.org',
-      },
+        content: 'https://www.animeaux.org'
+      }
     ],
     link: [
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       {
-        rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png',
+        rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png'
       },
       {
-        rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png',
+        rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png'
       },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#5bbad5' },
       { rel: 'theme-color', content: '#ffffff' },
       { rel: 'msapplication-TileColor', content: '#ffffff' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:400,500|Material+Icons' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:400,500|Material+Icons' }
     ],
     script: [
       {
@@ -78,13 +78,13 @@ export default {
             "areaServed" : "FR",
             "contactType": "customer service"
           }
-        }`,
-      },
+        }`
+      }
     ],
     htmlAttrs: {
-      lang: 'fr',
+      lang: 'fr'
     },
-    __dangerouslyDisableSanitizers: ['script'],
+    __dangerouslyDisableSanitizers: ['script']
   },
   loading: {
     color: '#0078BF',
@@ -117,27 +117,11 @@ export default {
     }],
     ['@nuxtjs/style-resources', {
       scss: [
-        '~/assets/scss/variables/_colors.scss',
+        '~/assets/scss/variables/_colors.scss'
       ]
     }]
   ],
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-  },
-  build: {
-    // postcss: [
-    //   require('autoprefixer'),
-    // ],
-    // extend(config, ctx) {
-    //   // Run ESLint on save
-    //   if (ctx.isDev && ctx.isClient) {
-    //     config.module.rules.push({
-    //       enforce: 'pre',
-    //       test: /\.(js|vue)$/,
-    //       loader: 'eslint-loader',
-    //       exclude: /(node_modules)/
-    //     })
-    //   }
-    // }
   }
 }

@@ -7,45 +7,49 @@
       {{ label }}
     </label>
     <input
+      :id="name"
+      v-model="tempValue"
       class="input"
       :type="type"
       :name="name"
-      :id="name"
       :value="value"
-      v-model="tempValue"
       @input="setValue"
-    />
+    >
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'a-input',
-    props: {
-      type: {
-        type: String,
-      },
-      name: {
-        type: String,
-      },
-      label: {
-        type: String,
-      },
-      value: {
-        type: null,
-      },
+export default {
+  name: 'AInput',
+  props: {
+    type: {
+      type: String,
+      default: null
     },
-    data() {
-      return {
-        tempValue: null,
-      };
+    name: {
+      type: String,
+      default: null
     },
-    methods: {
-      setValue() {
-        this.$emit('input', this.tempValue);
-      },
+    label: {
+      type: String,
+      default: null
     },
-  };
+    value: {
+      type: null,
+      default: null
+    }
+  },
+  data() {
+    return {
+      tempValue: null
+    }
+  },
+  methods: {
+    setValue() {
+      this.$emit('input', this.tempValue)
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

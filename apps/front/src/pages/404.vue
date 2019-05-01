@@ -9,12 +9,12 @@
 </template>
 
 <script>
-  export default {
-    layout: 'error',
-    head() {
-      return {
-        title: 'Not found',
-      };
-    },
-  };
+export default {
+  layout: 'error',
+  head() {
+    return {
+      title: 'Not found'
+    }
+  }
+}
 </script>

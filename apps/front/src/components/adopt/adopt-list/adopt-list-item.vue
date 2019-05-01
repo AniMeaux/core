@@ -16,45 +16,46 @@
         },
       ]"
     />
-    <div class="item-no-image" v-if="!getImage"></div>
+    <div v-if="!getImage" class="item-no-image" />
     <div class="item-description">
       <div class="subhead-2 item-description-name">
-        {{ data.name }}
+        {{ data.name }}
       </div>
       <div v-if="age" class="body-2 item-description-age">
-        {{ age }}
+        {{ age }}
       </div>
     </div>
   </nuxt-link>
 </template>
 
 <script>
-  import Cloudinary from '~/components/global/cloudinary';
-  import moment from 'moment';
+import Cloudinary from '~/components/global/cloudinary'
+import moment from 'moment'
 
-  export default {
-    name: 'adopt-list-item',
-    props: {
-      success: {
-        type: Boolean,
-        default: false,
-      },
-      data: {
-        type: Object,
-      },
+export default {
+  name: 'AdoptListItem',
+  components: {
+    Cloudinary
+  },
+  props: {
+    success: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-      getImage() {
-        return this.data.images.length > 0 ? this.data.images[0] : null;
-      },
-      age() {
-        return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null;
-      },
+    data: {
+      type: Object,
+      default: null
+    }
+  },
+  computed: {
+    getImage() {
+      return this.data.images.length > 0 ? this.data.images[0] : null
     },
-    components: {
-      Cloudinary,
-    },
-  };
+    age() {
+      return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -70,13 +71,13 @@
         background-color: lightgray;
         min-height: 180px;
       }
-      
+
       &-image{
         max-height: 180px;
         width: 100%;
         overflow: hidden;
       }
-      
+
       &-description{
         display: flex;
         flex-direction: column;
