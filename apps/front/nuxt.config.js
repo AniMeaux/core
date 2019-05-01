@@ -108,10 +108,9 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // '@nuxtjs/auth',
     '@nuxtjs/localforage',
     '@nuxtjs/sitemap',
-    // 'nuxt-robots-module',
+    '@nuxtjs/robots',
     ['@nuxtjs/google-analytics', {
       id: env.GOOGLE.ANALYTICS.ID
     }],

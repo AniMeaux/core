@@ -5,7 +5,7 @@ set :application, "animeaux"
 set :repo_url, "git@github.com:AniMeaux/core.git"
 
 # Default branch is :master
-set :branch, "feature/blog-pages"
+set :branch, "master"
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, "/var/www/my_app_name"
@@ -28,6 +28,7 @@ set :branch, "feature/blog-pages"
 
 set :linked_files, [
   '.env',
+  'apps/front/env.js',
   'apps/back/config/secrets.yml'
 ]
 
