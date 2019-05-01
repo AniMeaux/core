@@ -4,7 +4,10 @@ class EventsController < ApplicationController
   # GET /events
   def index
     respond_to do |format|
-      @events = Event.limit(2)
+      @events = Event
+        .where('events.end_at >= ?', DateTime.now)
+        .active
+        .limit(3)
       format.json { render template: 'events/index', status: :ok }
     end
   end
@@ -49,6 +52,6 @@ class EventsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def event_params
-      params.require(:event).permit(:event_type, :begin_at, :end_at, :name, :description, :status)
+      params.require(:event).permit(:event_type, :begin_at, :end_at, :name, :description, :status, :url)
     end
 end

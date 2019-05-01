@@ -1,26 +1,26 @@
 <template>
-  <div class="app-loading" :class="{ 'loading-enter': loading, 'loading-leave': !loading }" v-if="loading">
-    <img src="~/assets/img/loading_animated.svg" width="300"/>
+  <div v-if="loading" class="app-loading" :class="{ 'loading-enter': loading, 'loading-leave': !loading }">
+    <img src="~/assets/img/loading_animated.svg" width="300">
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app-loading',
-    data() {
-      return {
-        loading: false,
-      };
+export default {
+  name: 'AppLoading',
+  data() {
+    return {
+      loading: false
+    }
+  },
+  methods: {
+    start() {
+      this.loading = true
     },
-    methods: {
-      start() {
-        this.loading = true;
-      },
-      finish() {
-        this.loading = false;
-      },
-    },
-  };
+    finish() {
+      this.loading = false
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -5,12 +5,12 @@
     </h2>
     <table class="body-1">
       <tbody>
-        <tr>
+        <tr v-if="age">
           <td>
             Age:
           </td>
           <td>
-            {{ data.age }}
+            {{ age }}
           </td>
         </tr>
         <tr>
@@ -18,7 +18,7 @@
             Sexe:
           </td>
           <td>
-            {{ data.gender }}
+            {{ gender }}
           </td>
         </tr>
         <tr>
@@ -35,17 +35,23 @@
 </template>
 
 <script>
-  export default {
-    name: 'adopt-specs',
-    props: {
-      data: {
-        type: Object,
-      },
-    },
-  };
-</script>
+import moment from 'moment'
 
-<style lang="scss" scoped>
-  .adopt-specs{
+export default {
+  name: 'AdoptSpecs',
+  props: {
+    data: {
+      type: Object,
+      default: null
+    }
+  },
+  computed: {
+    age() {
+      return this.data.birthday ? moment(this.data.birthday).fromNow(true) : null
+    },
+    gender() {
+      return this.data.gender === 'male' ? 'male' : 'femelle'
+    }
   }
-</style>
+}
+</script>

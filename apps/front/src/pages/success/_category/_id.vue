@@ -5,8 +5,7 @@
         <h1 class="adopt-title display-1 title-underline">
           {{ data.name }}
         </h1>
-        <div class="adopt-header-buttons">
-        </div>
+        <div class="adopt-header-buttons" />
       </div>
 
       <div class="adopt-layout">
@@ -34,87 +33,84 @@
 </template>
 
 <script>
-  import AdoptSpecs from '~/components/adopt-view/adopt-specs';
-  import AdoptImages from '~/components/adopt-view/adopt-images';
-  import AdoptModal from '~/components/adopt-view/adopt-modal';
+import AdoptSpecs from '~/components/adopt-view/adopt-specs'
+import AdoptImages from '~/components/adopt-view/adopt-images'
 
-  import ShareButton from '~/components/global/share-button';
+export default {
+  components: {
+    AdoptSpecs,
+    AdoptImages
+  },
+  head() {
+    const titleCategories = {
+      cat: 'Chats adoptés',
+      dog: 'Chiens adoptés',
+      rodent: 'Rongeurs adoptés',
+      bird: 'Oiseaux adoptés',
+      reptile: 'Reptiles adoptés'
+    }
 
-  export default {
-    head() {
-      const titleCategories = {
-        cat: 'Chats adoptés',
-        dog: 'Chiens adoptés',
-        rodent: 'Rongeurs adoptés',
-        bird: 'Oiseaux adoptés',
-        reptile: 'Reptiles adoptés',
-      };
+    let image = []
+    if (this.data.images.length > 0) {
+      image = [
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.$cloudinary.getImageUrl(this.data.images[0].public_id)
+        }
+      ]
+    }
 
-      let image = [];
-      if (this.data.images.length > 0) {
-        image = [
-          {
-            hid: 'og:image',
-            name: 'og:image',
-            content: this.$cloudinary.getImageUrl(this.data.images[0].public_id),
-          },
-        ];
-      }
+    const url = `https://www.animeaux.org${this.$route.path}`
 
-      const url = `https://www.animeaux.org${this.$route.path}`;
-
-      return {
-        title: `${titleCategories[this.data.category]} - ${this.data.name}`,
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: `${this.data.name} a été adopté au travers de notre association. ${this.data.description}`,
-          },
-          {
-            hid: 'og:title',
-            name: 'og:title',
-            content: `${titleCategories[this.data.category]} - ${this.data.name}`,
-          },
-          {
-            hid: 'og:url',
-            name: 'og:url',
-            content: url,
-          },
-          {
-            hid: 'og:description',
-            name: 'og:description',
-            content: `${this.data.name} a été adopté au travers de notre association. ${this.data.description}`,
-          },
-          ...image,
-        ],
-      };
-    },
-    async asyncData({ app, params }) {
-      const { data } = await app.$api.get(`/animals/${params.id}`);
-      return { data };
-    },
-    data() {
-      return {
-        data: null,
-        adoptVisible: false,
-      };
-    },
-    methods: {
-      adopt() {
-        this.adoptVisible = true;
-      },
-    },
-    components: {
-      AdoptModal,
-      AdoptSpecs,
-      AdoptImages,
-      ShareButton,
-    },
-  };
+    return {
+      title: `${titleCategories[this.data.category]} - ${this.data.name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `${this.data.name} a été adopté au travers de notre association. ${this.data.description}`
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `${titleCategories[this.data.category]} - ${this.data.name}`
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: url
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: `${this.data.name} a été adopté au travers de notre association. ${this.data.description}`
+        },
+        ...image
+      ]
+    }
+  },
+  data() {
+    return {
+      data: null,
+      adoptVisible: false
+    }
+  },
+  async asyncData({ app, params }) {
+    const { data } = await app.$api.get(`/animals/${params.id}`)
+    return { data }
+  },
+  methods: {
+    adopt() {
+      this.adoptVisible = true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt{
     background-color: #F7F7F7;
 
@@ -136,17 +132,17 @@
         }
       }
     }
-    
+
     &-title{
       color: $blue;
       margin-top: 16px;
     }
-    
+
     &-layout{
       display: grid;
-      grid-template-columns: 30% 80%;
+      grid-template-columns: 30% 1fr;
       grid-gap: 16px;
-      
+
       margin-top: 32px;
 
       @media only screen and (max-width: 720px) {
@@ -161,7 +157,7 @@
 
       &-main{
         padding: 16px;
-        
+
         .main-content{
           display: grid;
           grid-template-columns: 8fr 4fr;
@@ -175,4 +171,3 @@
     }
   }
 </style>
-

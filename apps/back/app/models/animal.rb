@@ -1,6 +1,6 @@
 class Animal < ApplicationRecord
-  has_many :images, through: :animal_images, dependent: :destroy
   has_many :animal_images, dependent: :destroy
+  has_many :images, through: :animal_images, dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :animal_images, allow_destroy: true
@@ -8,7 +8,7 @@ class Animal < ApplicationRecord
   validates :name, length: { minimum: 2 }
   validates :species, length: { minimum: 2 }
   validates :description, length: { maximum: 1200 }
-  validates :age, numericality: { only_integer: true }
+  validates :birthday, presence: true
 
   enum category: [
     :cat,

@@ -27,12 +27,14 @@
 </template>
 
 <script>
-  export default {
-    name: 'home-donation',
-  };
+export default {
+  name: 'HomeDonation'
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .home-donation{
     background-color: $blue;
     padding: 16px 16px 32px 16px;
@@ -41,7 +43,7 @@
       display: grid;
       grid-template-columns: 9fr 3fr;
       grid-gap: 16px;
-      
+
       @media only screen and (max-width: 495px) {
         grid-template-columns: 1fr;
       }
@@ -72,11 +74,6 @@
 
     .headline{
       margin-bottom: 8px;
-    }
-
-    .body-1{
-      // width: 80%;
-      // margin: 0 auto;
     }
   }
 </style>

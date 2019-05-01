@@ -1,4 +1,4 @@
-json.extract! @animal, :id, :name, :description, :age, :category, :gender, :species, :status
+json.extract! @animal, :id, :name, :description, :birthday, :category, :gender, :species, :status
 json.images do
   json.array! @animal.images do |image|
     json.extract! image, :id

@@ -19,85 +19,85 @@
 </template>
 
 <script>
-  export default {
-    name: 'adopt-header',
-    props: {
-      success: {
-        type: Boolean,
-        default: false,
-      },
-      category: {
-        type: String,
-        required: true,
-      },
+export default {
+  name: 'AdoptHeader',
+  props: {
+    success: {
+      type: Boolean,
+      default: false
     },
-    computed: {
-      getTitle() {
-        return (this.success ? this.categoriesSuccess : this.categories)[this.category].title;
-      },
-      getIcon() {
-        return (this.success ? this.categoriesSuccess : this.categories)[this.category].icon;
-      },
-    },
-    data() {
-      return {
-        categoriesSuccess: {
-          dog: {
-            title: 'Nos chiens',
-            subtitle: 'Nos chiens qui ont trouvés une famille',
-            icon: 'dog.svg',
-          },
-          cat: {
-            title: 'Nos chats',
-            subtitle: 'Nos chats qui ont trouvés une famille',
-            icon: 'cat.svg',
-          },
-          reptile: {
-            title: 'Nos reptiles',
-            subtitle: 'Nos reptiles qui ont trouvés une famille',
-            icon: 'snake.svg',
-          },
-          bird: {
-            title: 'Nos oiseaux',
-            subtitle: 'Nos oiseaux qui ont trouvés une famille',
-            icon: 'parrot.svg',
-          },
-          rodent: {
-            title: 'Nos rongeurs',
-            subtitle: 'Nos rongeurs qui ont trouvés une famille',
-            icon: 'bunny.svg',
-          },
+    category: {
+      type: String,
+      required: true
+    }
+  },
+  data() {
+    return {
+      categoriesSuccess: {
+        dog: {
+          title: 'Nos chiens',
+          subtitle: 'Nos chiens qui ont trouvés une famille',
+          icon: 'dog.svg'
         },
-        categories: {
-          dog: {
-            title: 'Nos chiens',
-            subtitle: 'Nos chiens qui attendent une famille',
-            icon: 'dog.svg',
-          },
-          cat: {
-            title: 'Nos chats',
-            subtitle: 'Nos chats qui attendent une famille',
-            icon: 'cat.svg',
-          },
-          reptile: {
-            title: 'Nos reptiles',
-            subtitle: 'Nos reptiles qui attendent une famille',
-            icon: 'snake.svg',
-          },
-          bird: {
-            title: 'Nos oiseaux',
-            subtitle: 'Nos oiseaux qui attendent une famille',
-            icon: 'parrot.svg',
-          },
-          rodent: {
-            title: 'Nos rongeurs',
-            subtitle: 'Nos rongeurs qui attendent une famille',
-            icon: 'bunny.svg',
-          },
+        cat: {
+          title: 'Nos chats',
+          subtitle: 'Nos chats qui ont trouvés une famille',
+          icon: 'cat.svg'
         },
-      };
+        reptile: {
+          title: 'Nos reptiles',
+          subtitle: 'Nos reptiles qui ont trouvés une famille',
+          icon: 'snake.svg'
+        },
+        bird: {
+          title: 'Nos oiseaux',
+          subtitle: 'Nos oiseaux qui ont trouvés une famille',
+          icon: 'parrot.svg'
+        },
+        rodent: {
+          title: 'Nos rongeurs',
+          subtitle: 'Nos rongeurs qui ont trouvés une famille',
+          icon: 'bunny.svg'
+        }
+      },
+      categories: {
+        dog: {
+          title: 'Nos chiens',
+          subtitle: 'Nos chiens qui attendent une famille',
+          icon: 'dog.svg'
+        },
+        cat: {
+          title: 'Nos chats',
+          subtitle: 'Nos chats qui attendent une famille',
+          icon: 'cat.svg'
+        },
+        reptile: {
+          title: 'Nos reptiles',
+          subtitle: 'Nos reptiles qui attendent une famille',
+          icon: 'snake.svg'
+        },
+        bird: {
+          title: 'Nos oiseaux',
+          subtitle: 'Nos oiseaux qui attendent une famille',
+          icon: 'parrot.svg'
+        },
+        rodent: {
+          title: 'Nos rongeurs',
+          subtitle: 'Nos rongeurs qui attendent une famille',
+          icon: 'bunny.svg'
+        }
+      }
+    }
+  },
+  computed: {
+    getTitle() {
+      return (this.success ? this.categoriesSuccess : this.categories)[this.category].title
     },
-  };
+    getIcon() {
+      return (this.success ? this.categoriesSuccess : this.categories)[this.category].icon
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

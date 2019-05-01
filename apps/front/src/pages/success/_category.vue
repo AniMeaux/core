@@ -5,23 +5,25 @@
 </template>
 
 <script>
-  export default {
-    head() {
-      return {
-        title: 'À adopter',
-      };
-    },
-    validate({ params }) {
-      const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird'];
-      return categories.includes(params.category);
-    },
-  };
+export default {
+  head() {
+    return {
+      title: 'À adopter'
+    }
+  },
+  validate({ params }) {
+    const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird']
+    return categories.includes(params.category)
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt{
     background-color: #F7F7F7;
-    
+
     &-title{
       color: $blue;
       margin-top: 16px;
@@ -34,12 +36,12 @@
         }
       }
     }
-    
+
     &-layout{
       display: grid;
       grid-template-columns: 3fr 9fr;
       grid-gap: 16px;
-      
+
       margin-top: 32px;
 
       &-side, &-main{
@@ -53,7 +55,7 @@
         @media only screen and (max-width: 720px) {
           padding: 16px;
         }
-        
+
         h2, h3{
           &.blue{
             color: $blue;
@@ -83,4 +85,3 @@
     }
   }
 </style>
-

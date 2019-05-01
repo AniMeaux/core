@@ -1,0 +1,37 @@
+version: "2"
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./apps/back/tmp/db:/var/lib/postgresql/data
+      - ./apps/back/heroku.dump:/var/lib/heroku.dump
+
+  back:
+    build: apps/back
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    env_file:
+     - ./.env
+    environment:
+      - RAILS_ENV=production
+      - RACK_ENV=production
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./apps/back:/back
+      - ./apps/back/config/secrets.yml:/back/config/secrets.yml
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+
+  front:
+    build: apps/front
+    command: bash -c "NODE_ENV=production npm start"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./apps/front:/app
+      - ./apps/front/node_modules
+    

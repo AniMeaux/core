@@ -1,13 +1,13 @@
 module.exports = {
   API: {
-    BASE_URL: 'https://api.animeaux.org',
+    BASE_URL: 'https://api.animeaux.org'
   },
   GOOGLE: {
     ANALYTICS: {
-      ID: 'UA-118470648-1',
-    },
+      ID: 'UA-118470648-1'
+    }
   },
   CLOUDINARY: {
-    CLOUD_NAME: 'hryjanpur',
-  },
-};
+    CLOUD_NAME: 'hryjanpur'
+  }
+}

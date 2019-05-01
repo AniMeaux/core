@@ -43,87 +43,89 @@
 </template>
 
 <script>
-  import AdoptSpecs from '~/components/adopt-view/adopt-specs';
-  import AdoptImages from '~/components/adopt-view/adopt-images';
-  import AdoptModal from '~/components/adopt-view/adopt-modal';
+import AdoptSpecs from '~/components/adopt-view/adopt-specs'
+import AdoptImages from '~/components/adopt-view/adopt-images'
+import AdoptModal from '~/components/adopt-view/adopt-modal'
 
-  import ShareButton from '~/components/global/share-button';
+import ShareButton from '~/components/global/share-button'
 
-  export default {
-    head() {
-      const titleCategories = {
-        cat: 'Chats à adopter',
-        dog: 'Chiens à adopter',
-        rodent: 'Rongeurs à adopter',
-        bird: 'Oiseaux à adopter',
-        reptile: 'Reptiles à adopter',
-      };
+export default {
+  head() {
+    const titleCategories = {
+      cat: 'Chats à adopter',
+      dog: 'Chiens à adopter',
+      rodent: 'Rongeurs à adopter',
+      bird: 'Oiseaux à adopter',
+      reptile: 'Reptiles à adopter'
+    }
 
-      let image = [];
-      if (this.data.images.length > 0) {
-        image = [
-          {
-            hid: 'og:image',
-            name: 'og:image',
-            content: this.$cloudinary.getImageUrl(this.data.images[0].public_id),
-          },
-        ];
-      }
+    let image = []
+    if (this.data.images.length > 0) {
+      image = [
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: this.$cloudinary.getImageUrl(this.data.images[0].public_id)
+        }
+      ]
+    }
 
-      const url = `https://www.animeaux.org${this.$route.path}`;
+    const url = `https://www.animeaux.org${this.$route.path}`
 
-      return {
-        title: `${titleCategories[this.data.category]} - ${this.data.name}`,
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`,
-          },
-          {
-            hid: 'og:title',
-            name: 'og:title',
-            content: `${titleCategories[this.data.category]} - ${this.data.name}`,
-          },
-          {
-            hid: 'og:url',
-            name: 'og:url',
-            content: url,
-          },
-          {
-            hid: 'og:description',
-            name: 'og:description',
-            content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`,
-          },
-          ...image,
-        ],
-      };
-    },
-    async asyncData({ app, params }) {
-      const { data } = await app.$api.get(`/animals/${params.id}`);
-      return { data };
-    },
-    data() {
-      return {
-        data: null,
-        adoptVisible: false,
-      };
-    },
-    methods: {
-      adopt() {
-        this.adoptVisible = true;
-      },
-    },
-    components: {
-      AdoptModal,
-      AdoptSpecs,
-      AdoptImages,
-      ShareButton,
-    },
-  };
+    return {
+      title: `${titleCategories[this.data.category]} - ${this.data.name}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: `${titleCategories[this.data.category]} - ${this.data.name}`
+        },
+        {
+          hid: 'og:url',
+          name: 'og:url',
+          content: url
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: `Adoptez ${this.data.name} au travers de notre association. ${this.data.description}`
+        },
+        ...image
+      ]
+    }
+  },
+  components: {
+    AdoptModal,
+    AdoptSpecs,
+    AdoptImages,
+    ShareButton
+  },
+  data() {
+    return {
+      data: {},
+      adoptVisible: false
+    }
+  },
+  async asyncData({ app, params }) {
+    const { data } = await app.$api.get(`/animals/${params.id}`)
+    return { data }
+  },
+  methods: {
+    adopt() {
+      this.adoptVisible = true
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt{
     background-color: #F7F7F7;
 
@@ -145,17 +147,17 @@
         }
       }
     }
-    
+
     &-title{
       color: $blue;
       margin-top: 16px;
     }
-    
+
     &-layout{
       display: grid;
-      grid-template-columns: 30% 80%;
+      grid-template-columns: 30% 1fr;
       grid-gap: 16px;
-      
+
       margin-top: 32px;
 
       @media only screen and (max-width: 720px) {
@@ -170,7 +172,7 @@
 
       &-main{
         padding: 16px;
-        
+
         .main-content{
           display: grid;
           grid-template-columns: 8fr 4fr;
@@ -184,4 +186,3 @@
     }
   }
 </style>
-

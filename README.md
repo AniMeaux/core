@@ -10,14 +10,16 @@
 
 ## Table of Contents
 
-- [Getting started](#getting-started)
 - [Requirements](#requirements)
+- [Getting started](#getting-started)
+- [Usage](#usage)
 - [Contribute](#contribute)
 - [License](#license)
 
 ## Requirements
 
 To run this project, you may require:
+
 - Docker
 - Git
 
@@ -42,6 +44,7 @@ $ docker-compose run backend bundle exec rake db:seed
 ## Usage
 
 To run the admin panel, access to `http://localhost:3000/admin` and use the ids:
+
 - Email: `admin@example.com`
 - Password: `password`
 

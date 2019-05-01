@@ -1,16 +1,9 @@
 <template>
-  <div class="form-subscription-infos">
-    
-  </div>
+  <div class="form-subscription-infos" />
 </template>
 
 <script>
-  export default {
-    name: 'form-subscription-infos',
-  };
+export default {
+  name: 'FormSubscriptionInfos'
+}
 </script>
-
-<style lang="scss" scoped>
-  .form-subscription-infos{
-  }
-</style>

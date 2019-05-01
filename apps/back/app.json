@@ -1,5 +1,5 @@
 {
-  "name": "mycuistot",
+  "name": "animeaux",
   "scripts": {
     "postdeploy": "rake db:migrate"
   },
@@ -36,9 +36,6 @@
     "sendgrid"
   ],
   "buildpacks": [
-    {
-      "url": "heroku/nodejs"
-    },
     {
       "url": "heroku/ruby"
     }

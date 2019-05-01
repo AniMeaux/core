@@ -1,49 +1,62 @@
 <template>
-  <a href="https://www.facebook.com/events/228573844622300/" class="event-item">
+  <component :is="url ? 'a' : 'nuxt-link'" :href="url" :to="`/events/${id}`" class="event-item">
     <h3 class="subhead-1 event-item-title">
       {{ name }}
     </h3>
     <span class="caption event-item-date">
-      Du {{ getBegin }} au {{ getEnd }}
+      Du {{ getBegin }} au {{ getEnd }}
     </span>
     <p class="body-1 event-item-description">
       {{ description }}
     </p>
-  </a>
+  </component>
 </template>
 
 <script>
-  import moment from 'moment';
+import moment from 'moment'
 
-  export default {
-    name: 'event-item',
-    props: {
-      id: {
-        type: Number,
-      },
-      name: {
-        type: String,
-      },
-      description: {
-        type: String,
-      },
-      begin: {
-      },
-      end: {
-      },
+export default {
+  name: 'EventItem',
+  props: {
+    id: {
+      type: Number,
+      default: null
     },
-    computed: {
-      getBegin() {
-        return moment(this.begin).format('DD MMMM');
-      },
-      getEnd() {
-        return moment(this.end).format('DD MMMM');
-      },
+    name: {
+      type: String,
+      default: null
     },
-  };
+    description: {
+      type: String,
+      default: null
+    },
+    url: {
+      type: String,
+      default: null
+    },
+    begin: {
+      type: String,
+      default: null
+    },
+    end: {
+      type: String,
+      default: null
+    }
+  },
+  computed: {
+    getBegin() {
+      return moment(this.begin).format('DD MMMM [à] HH:mm')
+    },
+    getEnd() {
+      return moment(this.end).format('DD MMMM [à] HH:mm')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .event-item{
     position: relative;
     display: flex;
@@ -80,4 +93,3 @@
     }
   }
 </style>
-

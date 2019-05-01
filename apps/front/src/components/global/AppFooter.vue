@@ -35,14 +35,14 @@
             </a>
           </div>
         </div>
-        <div class="app-footer-logo">
-          <nuxt-link to="/">
+        <div class="app-footer-logo" style="display: flex;">
+          <nuxt-link to="/" style="margin: auto 0; margin-left:32px;">
             <img
               title="Ani'Meaux logo"
               src="~/assets/img/logo-simple.svg"
               alt="Logo Ani'Meaux"
               :height="60"
-            />
+            >
           </nuxt-link>
         </div>
       </div>
@@ -51,38 +51,40 @@
 </template>
 
 <script>
-  export default {
-    name: 'app-footer',
-    computed: {
-      getTelephone() {
-        return '+33612194392';
-      },
-      getTelephoneText() {
-        return '06 12 19 43 92';
-      },
+export default {
+  name: 'AppFooter',
+  data() {
+    return {
+      links: [
+        // {
+        //   title: 'Devenir membre',
+        //   path: '/become-member',
+        // },
+        {
+          title: 'Mentions légales',
+          path: '/legal'
+        }
+      ]
+    }
+  },
+  computed: {
+    getTelephone() {
+      return '+33612194392'
     },
-    data() {
-      return {
-        links: [
-          // {
-          //   title: 'Devenir membre',
-          //   path: '/become-member',
-          // },
-          {
-            title: 'Mentions légales',
-            path: '/legal',
-          },
-        ],
-      };
-    },
-  };
+    getTelephoneText() {
+      return '06 12 19 43 92'
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .app-footer{
     &-navigation{
       border-bottom: 1px solid lightgray;
-      
+
       ul, li{
         margin: 0;
         padding: 0;
@@ -123,7 +125,7 @@
 
       .name{
         margin: 0;
-        
+
         .green{
           color: $green;
         }

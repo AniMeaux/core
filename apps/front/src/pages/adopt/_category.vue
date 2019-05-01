@@ -5,54 +5,46 @@
 </template>
 
 <script>
-  import AdoptCategories from '@/components/adopt/adopt-categories';
-  import AdoptList from '@/components/adopt/adopt-list';
-  import AdoptHeader from '@/components/adopt/adopt-header';
-
-
-  export default {
-    head() {
-      return {
-        title: 'À adopteraze',
-      };
-    },
-    validate({ params }) {
-      const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird'];
-      return categories.includes(params.category);
-    },
-    data() {
-      return {
-        categories: {
-          dogs: {
-            name: 'Chiens',
-          },
-          cats: {
-            name: 'Chats',
-          },
-          reptiles: {
-            name: 'Reptiles',
-          },
-          birds: {
-            name: 'Oiseaux',
-          },
-          rodent: {
-            name: 'Rongeurs',
-          },
+export default {
+  head() {
+    return {
+      title: 'À adopteraze'
+    }
+  },
+  validate({ params }) {
+    const categories = ['dog', 'cat', 'reptile', 'rodent', 'bird']
+    return categories.includes(params.category)
+  },
+  data() {
+    return {
+      categories: {
+        dogs: {
+          name: 'Chiens'
         },
-      };
-    },
-    components: {
-      AdoptCategories,
-      AdoptList,
-      AdoptHeader,
-    },
-  };
+        cats: {
+          name: 'Chats'
+        },
+        reptiles: {
+          name: 'Reptiles'
+        },
+        birds: {
+          name: 'Oiseaux'
+        },
+        rodent: {
+          name: 'Rongeurs'
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .adopt{
     background-color: #F7F7F7;
-    
+
     &-title{
       color: $blue;
       margin-top: 16px;
@@ -65,12 +57,12 @@
         }
       }
     }
-    
+
     &-layout{
       display: grid;
       grid-template-columns: 3fr 9fr;
       grid-gap: 16px;
-      
+
       margin-top: 32px;
 
       &-side, &-main{
@@ -84,7 +76,7 @@
         @media only screen and (max-width: 720px) {
           padding: 16px;
         }
-        
+
         h2, h3{
           &.blue{
             color: $blue;
@@ -114,4 +106,3 @@
     }
   }
 </style>
-

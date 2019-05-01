@@ -1,4 +1,4 @@
 module.exports = {
   color: '#0078BF',
-  failedColor: '#ED2A26',
-};
+  failedColor: '#ED2A26'
+}

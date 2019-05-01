@@ -13,7 +13,9 @@
           Tout message / email provenant d'un compte autre que @animeaux.org ou de l'adresse mail association.animeaux@gmail.com, même signé de nos noms, est possiblement frauduleux. Soyez vigilants.
         </p>
         <p class="body-1">
-          Merci de nous <nuxt-link to="/contact">signaler</nuxt-link> tout message / publication vous paraissant suspect.
+          Merci de nous <nuxt-link to="/contact">
+            signaler
+          </nuxt-link> tout message / publication vous paraissant suspect.
         </p>
         <button class="btn" @click="hideWarning">
           Fermer
@@ -24,17 +26,19 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex';
+import { mapActions } from 'vuex'
 
-  export default {
-    name: 'home-warning',
-    methods: {
-      ...mapActions(['hideWarning']),
-    },
-  };
+export default {
+  name: 'HomeWarning',
+  methods: {
+    ...mapActions(['hideWarning'])
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .home-warning{
     background-color: $red;
     padding: 24px;

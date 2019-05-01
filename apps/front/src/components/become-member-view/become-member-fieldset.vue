@@ -2,29 +2,35 @@
   <div class="become-member-fieldset">
     <fieldset>
       <legend class="subhead-2">
-        <div class="fieldset-number">{{ number }}</div>
+        <div class="fieldset-number">
+          {{ number }}
+        </div>
         {{ legend }}
       </legend>
-      <slot></slot>
+      <slot />
     </fieldset>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'become-member-fieldset',
-    props: {
-      legend: {
-        type: String,
-      },
-      number: {
-        type: Number,
-      },
+export default {
+  name: 'BecomeMemberFieldset',
+  props: {
+    legend: {
+      type: String,
+      default: null
     },
-  };
+    number: {
+      type: Number,
+      default: null
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/scss/variables/_colors.scss";
+
   .become-member-fieldset{
     $size: 28px;
 
@@ -37,17 +43,16 @@
       padding-left: $size * 2;
       padding-right: 32px;
 
-
       legend{
         position: relative;
       }
     }
 
     .fieldset-number{
-      
+
       position: absolute;
       left: -$size * 1.5;
-      
+
       background-color: $blue;
       color: white;
       width: $size;

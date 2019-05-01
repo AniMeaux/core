@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  export default {
-    layout: 'error',
-    head() {
-      return {
-        title: 'Internal error',
-      };
-    },
-  };
+export default {
+  layout: 'error',
+  head() {
+    return {
+      title: 'Internal error'
+    }
+  }
+}
 </script>
