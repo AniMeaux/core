@@ -1,4 +1,4 @@
-import env from './env'
+import env from './src/config/env'
 
 export default {
   mode: 'universal',
