@@ -4,7 +4,7 @@
       v-if="getImage"
       class="item-image"
       :public-id="getImage.public_id"
-      :transformations="{ c: 'fill', w: 280, h: 280, fl: 'progressive', q: '10', f: 'auto' }"
+      :transformations="{ c: 'fill', w: 280, h: 280, fl: 'progressive', q: '50', f: 'auto' }"
       :sources="[
         {
           media: '(min-width: 650px)',
@@ -72,9 +72,6 @@
       }
       
       &-image{
-        // background-image: url('https://images.unsplash.com/photo-1518587671104-999f3dd2d340?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4ce982e9de006826792d0a915209455e&auto=format&fit=crop&w=1950&q=80');
-        // background-size: cover;
-        // background-position: center;
         max-height: 180px;
         width: 100%;
         overflow: hidden;
@@ -90,10 +87,6 @@
 
         &-name{
           color: $blue;
-        }
-
-        &-age{
-
         }
       }
     }
