@@ -26,6 +26,9 @@
           <div class="address body-1">
             77100, MEAUX
           </div>
+          <div class="address body-1">
+            Nous ne sommes pas un refuge. Inutile de vous déplacer.
+          </div>
           <div class="contact">
             <a class="tel menu" :href="`tel:${getTelephone}`">
               {{ getTelephoneText }}
