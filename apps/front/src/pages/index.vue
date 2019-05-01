@@ -21,6 +21,9 @@
             <p class="body-1">
               Grâce à vos dons, financiers ou matériels, aussi infimes soient-ils, nous pouvons élargir notre champ d’action et agir dans les meilleures conditions pour la cause animale.
             </p>
+            <p class="body-1">
+              Notre association ne disposant pas de structure comme la spa, aucun de nos protégés est visible au siège de l'association à Meaux. Tous nos protégés sont placés dans des familles d'accueil un peu partout en Ile-de-France. Si l'un d'eux vous intéresse, contactez-nous par mail ou téléphone, nous prendrons rapidement contact avec vous. Merci de votre compréhension.
+            </p>
           </section>
           <section id="teaming">
             <a href="https://www.teaming.net/ani-meaux" rel="noindex nofollow">
