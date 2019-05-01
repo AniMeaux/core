@@ -28,7 +28,6 @@ set :branch, "master"
 
 set :linked_files, [
   '.env',
-  'apps/front/env.js',
   'apps/back/config/secrets.yml'
 ]
 
