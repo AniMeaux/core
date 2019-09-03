@@ -59,6 +59,9 @@
               </p>
             </div>
           </section>
+          <br />
+          <br />
+          <iframe id="haWidget" allowtransparency="true" src="https://www.helloasso.com/associations/ani-meaux/formulaires/1/widget-bouton" style="width:100%;height:70px;border:none;"></iframe><div style="width:100%;text-align:center;"></div>
         </div>
         <aside class="home-content-side">
           <home-facebook />
