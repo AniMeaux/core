@@ -21,7 +21,7 @@
             SIRET: 839 627 171
           </div>
           <div class="address body-1">
-            81, Rue Du Faubourg Saint-Nicolas
+            6, Rue Notre Dame
           </div>
           <div class="address body-1">
             77100, MEAUX

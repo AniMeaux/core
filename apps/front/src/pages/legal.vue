@@ -164,7 +164,7 @@ export default {
     return {
       NAME: 'Ani\'Meaux',
       WEBSITE_URL: 'https://www.animeaux.org',
-      ADDRESS: '81, Rue Faubourg Saint-Nicolas 77100, MEAUX',
+      ADDRESS: '6, Rue Notre Dame 77100, MEAUX',
       PUBLISH_NAME: 'Sara MOREAU',
       PUBLISH_EMAIL: 'presidente@animeaux.org',
       WEB_NAME: 'William DA SILVA',

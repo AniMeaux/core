@@ -27,6 +27,12 @@
           <a href="https://nominoo.fr/" target="_blank" rel="noopener nofollow">
             <img src="~/assets/img/partners/nominoo.jpg" alt="Nominoo" height="300">
           </a>
+          <a href="http://www.breedercelect.fr/" target="_blank" rel="noopener nofollow">
+            <img src="~/assets/img/partners/breedercelect.png" alt="Breedercelect" height="150">
+          </a>
+          <a href="http://www.back-2-nature.fr/" target="_blank" rel="noopener nofollow">
+            <img src="~/assets/img/partners/back2nature.png" alt="Back2Nature" height="150">
+          </a>
         </div>
       </div>
     </div>

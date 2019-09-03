@@ -59,7 +59,7 @@ module.exports = {
         "email": "contact@animeaux.org",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "81, Rue du Faubourg Saint-Nicolas",
+          "streetAddress": "6, Rue Notre Dame",
           "addressLocality": "Meaux",
           "addressRegion": "Seine-et-Marne",
           "postalCode": "77100",
