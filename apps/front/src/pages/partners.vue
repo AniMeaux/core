@@ -6,32 +6,38 @@
       </h1>
       <div class="layout-aside">
         <div class="partners__list">
-          <a href="https://medailleschien.com" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/medailleschien.jpg" alt="MedaillesChien" height="300">
-          </a>
-          <a href="https://www.le-coin-des-animaux.fr" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/coindesanimaux.jpg" alt="Coin des animaux" height="300">
-          </a>
-          <a href="https://aalak.fr/" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/aalak.jpg" alt="Aalak" height="300">
-          </a>
-          <a href="https://www.ha-solidaire.com" target="_blank" rel="noopener nofollow">
-            <img src="https://www.ha-solidaire.com/images/logo.png" alt="Ha-Solidaire" height="300">
-          </a>
-          <a href="https://mrcroquette.fr/" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/mrcroquette.png" alt="Mr. Croquette" height="300">
-          </a>
-          <a href="https://www.tunetoo.com/" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/tunetoo.jpg" alt="Tunetoo" height="300">
-          </a>
-          <a href="https://nominoo.fr/" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/nominoo.jpg" alt="Nominoo" height="300">
-          </a>
-          <a href="http://www.breedercelect.fr/" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/breedercelect.png" alt="Breedercelect" height="150">
-          </a>
-          <a href="http://www.back-2-nature.fr/" target="_blank" rel="noopener nofollow">
-            <img src="~/assets/img/partners/back2nature.png" alt="Back2Nature" height="150">
+          <a
+            v-for="partner in getPartners"
+            :key="partner.id"
+            :href="partner.website_url"
+            target="_blank"
+            rel="noopener nofollow"
+          >
+            <template
+              v-if="partner.images[0]"
+            >
+              <cloudinary
+                class="item-image"
+                :public-id="partner.images[0].public_id"
+                :alt="partner.name"
+                :transformations="{ c: 'fit', w: 320, h: 320, fl: 'progressive', q: '50', f: 'auto' }"
+                :sources="[
+                  {
+                    media: '(min-width: 650px)',
+                    width: 300,
+                  },
+                  {
+                    media: '(max-width: 480px)',
+                    width: 280,
+                  },
+                ]"
+              />
+            </template>
+            <template
+              v-else
+            >
+              {{ partner.name }}
+            </template>
           </a>
         </div>
       </div>
@@ -40,7 +46,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import Cloudinary from '~/components/global/cloudinary'
+
 export default {
+  components: {
+    Cloudinary
+  },
   head() {
     return {
       title: 'Nos partenaires',
@@ -52,6 +64,17 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters(['getPartners'])
+  },
+  fetch({ app, store }) {
+    return app.$api.get('/partners')
+      .then((response) => {
+        if (response.ok) {
+          store.dispatch('setPartners', response.data)
+        }
+      })
   }
 }
 </script>
