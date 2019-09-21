@@ -29,7 +29,7 @@ services:
   front:
     build: apps/front
     command: bash -c "NODE_ENV=production npm start"
-    restart: always
+    restart: on-failure
     ports:
       - 8080:8080
     volumes:
