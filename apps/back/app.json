@@ -30,7 +30,6 @@
     }
   },
   "addons": [
-    "newrelic",
     "heroku-postgresql",
     "scheduler",
     "sendgrid"
