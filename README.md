@@ -52,6 +52,10 @@ To run the admin panel, access to `http://localhost:3000/admin` and use the ids:
 
 If you want to contribute to the project (new feature, bugfix, ...), follow the contribution guidelines.
 
+## Deployment
+
+See [Deployment](./docs/DEPLOYMENT) for production deploy instructions.
+
 ## License
 
 This project is under the **MIT license**. See the [License](./LICENSE) file for more informations.
