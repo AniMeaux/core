@@ -1,5 +1,6 @@
 <template>
   <section class="has-header">
+    <home-maintenance v-if="isInMaintenance" />
     <home-warning v-if="!loading && isWarningVisible" />
     <home-carousel />
     <div class="wrap">
@@ -81,6 +82,7 @@ import HomeFacebook from '~/components/home-view/home-facebook'
 import HomeEvents from '~/components/home-view/home-events'
 import HomeNewsletter from '~/components/home-view/home-newsletter'
 import HomeWarning from '~/components/home-view/home-warning'
+import HomeMaintenance from '~/components/home-view/home-maintenance'
 
 export default {
   components: {
@@ -88,11 +90,13 @@ export default {
     HomeFacebook,
     HomeEvents,
     HomeNewsletter,
-    HomeWarning
+    HomeWarning,
+    HomeMaintenance
   },
   data() {
     return {
-      loading: true
+      loading: true,
+      isInMaintenance: true
     }
   },
   computed: {
