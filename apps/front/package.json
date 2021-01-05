@@ -30,7 +30,7 @@
     "@nuxtjs/sitemap": "^0.1.1",
     "@nuxtjs/style-resources": "^0.1.2",
     "apisauce": "^0.14.3",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "cross-env": "^5.2.0",
     "localforage": "^1.7.1",
     "moment": "^2.22.1",
